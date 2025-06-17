@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videoväljare</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #videoPlayer {
+      display: block;
+      margin-bottom: 20px;
+      max-width: 100%;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="videoPlayer" width="640" controls>
+    <p>Din webbläsare stödjer inte HTML5-video.</p>
+  </video>
+
+  <div class="button-container">
+    <button onclick="playVideo(1)">Entré</button>
+    <button onclick="playVideo(2)">Lounge</button>
+    <button onclick="playVideo(3)">Klassrum</button>
+    <button onclick="playVideo(4)">Kök</button>
+    <button onclick="playVideo(5)">Kontor lugn avdelning</button>
+    <button onclick="playVideo(7)">Korridor</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
