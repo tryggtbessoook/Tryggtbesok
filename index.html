@@ -2,61 +2,45 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
-  <title>Magelungen Klickrunt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videoväljare</title>
   <style>
     body {
       font-family: sans-serif;
-      text-align: center;
-      background-color: #f0f0f0;
       padding: 20px;
     }
+    #videoPlayer {
+      display: block;
+      margin-bottom: 20px;
+      max-width: 100%;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
     button {
-      margin: 10px;
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      background-color: #007bff;
-      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    video {
-      margin-top: 20px;
-      max-width: 90%;
-      height: auto;
-      border: 2px solid #333;
-      border-radius: 8px;
-      background: black;
     }
   </style>
 </head>
 <body>
 
-  <h1>Magelungen – Klicka för att se rum</h1>
-
-  <button onclick="playVideo(1)">Entré, Kapprum</button>
-  <button onclick="playVideo(2)">Klassrum</button>
-  <button onclick="playVideo(3)">Kök</button>
-  <button onclick="playVideo(4)">Kontor, Lugn avdelning</button>
-  <button onclick="playVideo(5)">Korridor</button>
-
-  <video id="videoPlayer" controls>
-    <source src="video1.mp4" type="video/mp4" />
-    Din webbläsare stödjer inte video-taggen.
+  <video id="videoPlayer" width="640" controls>
+    <p>Din webbläsare stödjer inte HTML5-video.</p>
   </video>
 
-  <script>
-    function playVideo(num) {
-      const video = document.getElementById('videoPlayer');
-      video.src = `video${num}.mp4`;
-      video.load();
-      video.play();
-    }
-  </script>
+  <div class="button-container">
+    <button onclick="playVideo(1)">Entré</button>
+    <button onclick="playVideo(2)">Lounge</button>
+    <button onclick="playVideo(3)">Klassrum</button>
+    <button onclick="playVideo(4)">Kök</button>
+    <button onclick="playVideo(5)">Kontor lugn avdelning</button>
+    <button onclick="playVideo(6)">Korridor</button>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
