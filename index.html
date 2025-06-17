@@ -38,9 +38,43 @@
     <button onclick="playVideo(3)">Klassrum</button>
     <button onclick="playVideo(4)">Kök</button>
     <button onclick="playVideo(5)">Kontor lugn avdelning</button>
-    <button onclick="playVideo(6)">Korridor</button>
+    <button onclick="playVideo(6)"></button>  <!-- Tom knapp för video 6 -->
+    <button onclick="playVideo(7)">Korridor</button>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function playVideo(id) {
+      const player = document.getElementById('videoPlayer');
+      const sources = {
+        1: 'video1.mp4',
+        2: 'video2.mp4',
+        3: 'video3.mp4',
+        4: 'video4.mp4',
+        5: 'video5.mp4',
+        6: 'video6.mp4',
+        7: 'video7.mp4'
+      };
+
+      const src = sources[id];
+      if (!src) {
+        console.error('Ingen källa för video ' + id);
+        return;
+      }
+
+      // Rensa eventuella tidigare <source>-element
+      player.innerHTML = '';
+      const sourceEl = document.createElement('source');
+      sourceEl.src = src;
+      sourceEl.type = 'video/mp4';
+      player.appendChild(sourceEl);
+
+      player.load();
+      player.play();
+    }
+
+    // Spela upp video 1 direkt vid sidladdning
+    playVideo(1);
+  </script>
+
 </body>
 </html>
