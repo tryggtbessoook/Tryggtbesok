@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hur man tar sig hit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Om oss</a></li>
+      <li><a href="vagen.html">Hur man tar sig hit</a></li>
+      <li><a href="miljo.html">Hur det ser ut</a></li>
+      <li><a href="sensorik.html">Sensorik</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Hur tar man sig hit?</h1>
+  </header>
+
+  <main>
+    <section>
+      <p><strong>Adress:</strong> Ert företagsadress</p>
+      <p><strong>Kollektivtrafik:</strong> närmaste busshållplats/tunnelbana …</p>
+      <p><strong>Bil:</strong> parkering finns vid …</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tryggt Besök</p>
+  </footer>
+</body>
+</html>
