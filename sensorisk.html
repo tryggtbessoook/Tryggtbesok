@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensorik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Om oss</a></li>
+      <li><a href="vagen.html">Hur man tar sig hit</a></li>
+      <li><a href="miljo.html">Hur det ser ut</a></li>
+      <li><a href="sensorik.html">Sensorik</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Sensorisk guide</h1>
+  </header>
+
+  <main>
+    <div class="accordion" onclick="toggleContent(this)">
+      👃 Hur luktar det hos oss?
+      <div class="content">
+        <p>I byggnaden och lokalerna ni kommer att vistas i, så kommer inte några starka dofter av parfym dyka upp. Då vi strävar efter en så doftneutral miljö som möjligt.</p>
+        <ul>
+          <li>Nybryggt kaffe vid nära vistelse av köket</li>
+          <li>Matavfall, frukt och nybakat havre från fruktbaren i köket</li>
+          <li>Nyrenoverade lokaler med dofter av nymålat, lätta kemiska dofter, spån och skog från nytt trä</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion" onclick="toggleContent(this)">
+      🔉 Hur låter det hos oss?
+      <div class="content">
+        <p>Vi kunde inte spela in ljud för att få ett exakt resultat, men på en generaliserad nivå fångade vi viktiga aspekter:</p>
+        <ul>
+          <li>Kaffemaskin som maler bönor</li>
+          <li>Lugn musik i bakgrunden som går att stänga av</li>
+          <li>Människor som pratar</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion" onclick="toggleContent(this)">
+      ✋ Hur upplevs miljön hos oss?
+      <div class="content">
+        <ul>
+          <li>Temperaturen är ca 23-25 °C, justerbar via automatisk klimatkontroll</li>
+          <li>Ljusnivå: kök/entré ca 360‑500 lux (dimningsbart); lounge över 1000 lux riktat mot växter</li>
+          <li>Material: golvmattor, tygsoffor, bord i trä, stolar i trä och plast</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleContent(el) {
+      const content = el.querySelector('.content');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Tryggt Besök</p>
+  </footer>
+</body>
+</html>
