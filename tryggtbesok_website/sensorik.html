@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensorisk guide</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="sensorik.html">Sensorisk guide</a></li>
+      <li><a href="vagen-hit.html">Hur du tar sig hit</a></li>
+      <li><a href="platsen.html">Hur det ser ut</a></li>
+      <li><a href="video.html">Videor</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>Sensorisk guide</h1>
+  </header>
+  <main>
+    <div class="accordion" onclick="toggleContent(this)">
+      <h2>👃 Hur luktar det hos oss?</h2>
+      <div class="content">
+        <p>I byggnaden och lokalerna ni kommer att vistas i, kommer inga starka parfymer dyka upp. Vi strävar efter en så doftneutral miljö som möjligt.</p>
+        <ul>
+          <li>Nybryggt kaffe vid köket</li>
+          <li>Matavfall, frukt och nybakat havre från fruktbaren</li>
+          <li>Nymålat, lätta kemiska dofter, spån och skog från nytt trä</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion" onclick="toggleContent(this)">
+      <h2>🔉 Hur låter det hos oss?</h2>
+      <div class="content">
+        <p>På en generaliserad nivå kan vi nämna:</p>
+        <ul>
+          <li>Kaffemaskin som maler bönor</li>
+          <li>Lugn, avstängningsbar bakgrundsmusik</li>
+          <li>Människor som pratar</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion" onclick="toggleContent(this)">
+      <h2>✋ Hur upplevs miljön hos oss?</h2>
+      <div class="content">
+        <ul>
+          <li>Temperatur: ca 23-25 °C, justerbar</li>
+          <li>Ljus: kök/entré 360–500 lux (dimningsbart), lounge över 1000 lux</li>
+          <li>Material: golvmattor, tygsoffor, träbord, trä- och plaststolar</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <script>
+    function toggleContent(el) {
+      const content = el.querySelector('.content');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

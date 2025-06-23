@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Videor</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="sensorik.html">Sensorisk guide</a></li>
+      <li><a href="vagen-hit.html">Hur du tar sig hit</a></li>
+      <li><a href="platsen.html">Hur det ser ut</a></li>
+      <li><a href="video.html">Videor</a></li>
+    </ul>
+  </nav>
+  <video id="videoPlayer" width="640" controls>
+    <p>Din webbläsare stödjer inte HTML5-video.</p>
+  </video>
+  <div class="button-container">
+    <button onclick="playVideo(1)">Entré</button>
+    <button onclick="playVideo(2)">Lounge</button>
+    <button onclick="playVideo(3)">Klassrum</button>
+    <button onclick="playVideo(4)">Kök</button>
+    <button onclick="playVideo(5)">Kontor lugn avdelning</button>
+    <button onclick="playVideo(7)">Korridor</button>
+  </div>
+  <script>
+    function playVideo(id) {
+      const sources = {
+        1: 'video1.mp4',
+        2: 'video2.mp4',
+        3: 'video3.mp4',
+        4: 'video4.mp4',
+        5: 'video5.mp4',
+        7: 'video7.mp4'
+      };
+      const player = document.getElementById('videoPlayer');
+      player.innerHTML = '';
+      const sourceEl = document.createElement('source');
+      sourceEl.src = sources[id];
+      sourceEl.type = 'video/mp4';
+      player.appendChild(sourceEl);
+      player.load();
+      player.play();
+    }
+    playVideo(1);
+  </script>
+</body>
+</html>
