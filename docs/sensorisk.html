@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sensorisk guide</title>
+  <style>
+    body { font-family: sans-serif; background: #fff; margin: 0; padding: 20px; }
+    h1 { font-size: 24px; margin-bottom: 20px; }
+    .accordion { background-color: white; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; }
+    .accordion:hover { background-color: #f0f0f0; }
+    .content { display: none; padding: 15px 0 0 0; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Sensorisk guide</h1>
+
+  <div class="accordion" onclick="toggleContent(this)">
+    👃 Hur luktar det hos oss?
+    <div class="content">
+      <p>I byggnaden och lokalerna ni kommer att vistas i, så kommer inte några starka dofter av parfym dyka upp. Då vi strävar efter en sådan doftneutral miljö som möjligt.</p>
+      <p>Möjliga dofter som kan tänka sig dyka upp i lokalerna är:</p>
+      <p>- Nybryggt kaffe vid nära vistelse av köket</p>
+      <p>- Matavfall, frukt och nybakat havre från fruktbaren i köket</p>
+      <p>- Nyrenoverade lokaler resulterar i dofter som nymålat med lätta kemiska dofter, spån och skog från nytt trä</p>
+    </div>
+  </div>
+
+  <div class="accordion" onclick="toggleContent(this)">
+    🔉 Hur låter det hos oss?
+    <div class="content">
+      <p>Vi kunde inte spela in ljud för att få en sådan exakt resultat som det går att uppnå. Men på en generaliserad nivå kunde vi fånga viktiga aspekter som är värda att nämna.</p>
+      <p>Du kan förvänta dig ljud som:</p>
+      <p>- Kaffemaskin som maler bönor</p>
+      <p>- Lugn musik i bakgrunden som går att stänga av</p>
+      <p>- Människor som pratar</p>
+    </div>
+  </div>
+
+  <div class="accordion" onclick="toggleContent(this)">
+    ✋ Hur upplevs miljön hos oss?
+    <div class="content">
+      <p>Temperaturen hos oss är ca 23-25 grader och kan variera beroende på årstid och önskan från personal då det går att justera temperatur automatiskt.</p>
+      <p>Ljuset i lokalerna varierar beroende på vart du befinner dig:</p>
+      <p>- I köket och entrén så är ljusen svaga på omkring 360-500 lux. De är även dimningsbara.</p>
+      <p>- Lamporna i loungen är mer starka upp mot över 1000 lux och pekar åt olika håll. Mest för att belysa olika växter.</p>
+      <p>Du kan förvänta dig dessa material i lokalerna:</p>
+      <p>- Golvmattor</p>
+      <p>- Tygsoffor</p>
+      <p>- Bord i trä</p>
+      <p>- Stolar i trä och plast</p>
+    </div>
+  </div>
+
+  <!-- Personalomsättning -->
+  <div class="accordion" onclick="toggleContent(this)">
+    👥 Personalomsättning
+    <div class="content">
+      <p>- Lunchtid: Folk sitter vid matbordet och äter tillsammans.</p>
+      <p>- Kontoret under övrig tid på dagen: Huvudsakligen vistelse i kontorsutrymmet.</p>
+      <p>- Loungen: Besökare kan slå sig ner i soffor och fåtöljer, ofta med en kopp kaffe eller en tidning.</p>
+      <p>- Rörlighet mellan utrymmen: Personal och gäster hämtar dryck eller mat från kök; pauser sker oftast via kontor → toalett.</p>
+      <p>- Allmän aktivitet: Någon promenerar genom korridorerna, kikar in i olika rum eller bara sträcker på benen.</p>
+      <p>- Helhetsintryck: Lokalen känns både inbjudande och levande tack vare kontinuerlig rörelse.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleContent(el) {
+      const content = el.querySelector(".content");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
