@@ -1,8 +1,39 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hur man tar sig hit</title><link rel="stylesheet" href="style.css"/></head>
+  <script src="menu.js"></script>
 <body>
+  <body>
+  <!-- Menyknapp -->
+  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+    <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
+  </div>
+
+  <!-- Meny -->
+  <div id="menu" style="display: none; position: fixed; top: 60px; right: 20px; background-color: white; border: 1px solid #ccc; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <a href="index.html">🏠 Hem</a><br />
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a><br />
+    <a href="vagen-hit.html">🗺️ Vägen hit</a><br />
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a><br />
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a><br />
+    <a href="bildstod.html">🧩 Bildstöd</a>
+  </div>
+
+  <!-- JS för menylogik -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+  <!-- Din övriga sida nedan (exempelvis startsidan) -->
+  <h1>Välkommen till TryggtBesök</h1>
+  <p>Här kan du navigera till olika delar med hjälp av menyn ovan.</p>
+</body>
   <nav><ul class="menu"><li><a href="index.html">Hem</a></li><li><a href="sensorik.html">Sensorisk guide</a></li><li><a href="vagen.html">Hur man tar sig hit</a></li><li><a href="miljo.html">Hur det ser ut</a></li><li><a href="video.html">Videor</a></li></ul></nav>
   <header><h1>Hur man tar sig hit</h1></header>
   <main>
