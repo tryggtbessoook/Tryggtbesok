@@ -9,20 +9,58 @@
 </head>
   <script src="menu.js"></script>
 <body>
-  <!-- Hamburger-ikon -->
+<!-- Hamburger-ikon -->
 <div class="menu-icon" onclick="toggleMenu()">
   <span></span>
   <span></span>
   <span></span>
 </div>
+
 <!-- Dropdown-menyn -->
 <nav id="navDropdown" class="dropdown">
   <a href="index.html">Hem</a>
   <a href="miljo.html">Hur det ser ut</a>
-  <a href="video.html">Videor</a>
-  <a href="sensorik.html">Sensorisk guide</a>
   <a href="vagen.html">Vägen hit</a>
+  <a href="sensorik.html">Sensorisk guide</a>
 </nav>
+
+<style>
+  .menu-icon {
+    width: 30px;
+    cursor: pointer;
+    margin: 20px;
+  }
+  .menu-icon span {
+    height: 3px;
+    background: black;
+    display: block;
+    margin: 5px 0;
+  }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .dropdown a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin: 10px 0;
+  }
+</style>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("navDropdown");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
   <header>
     <h1>Välkommen till TryggtBesök</h1>
     <p>Vi hjälper dig förbereda och förstå din omgivning inför ditt besök.</p>
