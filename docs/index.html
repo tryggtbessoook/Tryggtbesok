@@ -9,58 +9,34 @@
 </head>
   <script src="menu.js"></script>
 <body>
-<!-- Hamburger-ikon -->
-<div class="menu-icon" onclick="toggleMenu()">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+<body>
+  <!-- Menyknapp -->
+  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+    <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
+  </div>
 
-<!-- Dropdown-menyn -->
-<nav id="navDropdown" class="dropdown">
-  <a href="index.html">Hem</a>
-  <a href="miljo.html">Hur det ser ut</a>
-  <a href="vagen.html">Vägen hit</a>
-  <a href="sensorik.html">Sensorisk guide</a>
-</nav>
+  <!-- Meny -->
+  <div id="menu" style="display: none; position: fixed; top: 60px; right: 20px; background-color: white; border: 1px solid #ccc; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <a href="index.html">🏠 Hem</a><br />
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a><br />
+    <a href="vagen-hit.html">🗺️ Vägen hit</a><br />
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a><br />
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a><br />
+    <a href="bildstod.html">🧩 Bildstöd</a>
+  </div>
 
-<style>
-  .menu-icon {
-    width: 30px;
-    cursor: pointer;
-    margin: 20px;
-  }
-  .menu-icon span {
-    height: 3px;
-    background: black;
-    display: block;
-    margin: 5px 0;
-  }
-  .dropdown {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-  .dropdown a {
-    display: block;
-    text-decoration: none;
-    color: black;
-    margin: 10px 0;
-  }
-</style>
+  <!-- JS för menylogik -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("navDropdown");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-</script>
+  <!-- Din övriga sida nedan (exempelvis startsidan) -->
+  <h1>Välkommen till TryggtBesök</h1>
+  <p>Här kan du navigera till olika delar med hjälp av menyn ovan.</p>
+</body>
   <header>
     <h1>Välkommen till TryggtBesök</h1>
     <p>Vi hjälper dig förbereda och förstå din omgivning inför ditt besök.</p>
