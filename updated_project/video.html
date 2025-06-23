@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Videor</title><link rel="stylesheet" href="style.css"/></head>
+<body>
+  <nav><ul class="menu"><li><a href="index.html">Hem</a></li><li><a href="sensorik.html">Sensorisk guide</a></li><li><a href="vagen.html">Hur du tar dig hit</a></li><li><a href="miljo.html">Hur det ser ut</a></li><li><a href="video.html">Videor</a></li></ul></nav>
+  <!-- Video-väljare kod -->
+  <video id="videoPlayer" width="640" controls><p>Din webbläsare stödjer inte HTML5-video.</p></video>
+  <div class="button-container"><button onclick="playVideo(1)">Entré</button><!-- etc --></div>
+  <script>function playVideo(id){const s={1:'video1.mp4'};const p=document.getElementById('videoPlayer');p.innerHTML='';var e=document.createElement('source');e.src=s[id];e.type='video/mp4';p.appendChild(e);p.load();p.play();}playVideo(1);</script>
+</body>
+</html>
