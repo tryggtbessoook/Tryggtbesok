@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <title>Sensorisk guide</title>
   <style>
-    body { font-family: sans-serif; background: #fff; margin: 0; padding: 20px; }
+    <script src="menu.js"></script>
+    body 
+    <body>
+  <!-- Menyknapp -->
+  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+    <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
+  </div>
+
+  <!-- Meny -->
+  <div id="menu" style="display: none; position: fixed; top: 60px; right: 20px; background-color: white; border: 1px solid #ccc; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <a href="index.html">🏠 Hem</a><br />
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a><br />
+    <a href="vagen-hit.html">🗺️ Vägen hit</a><br />
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a><br />
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a><br />
+    <a href="bildstod.html">🧩 Bildstöd</a>
+  </div>
+
+  <!-- JS för menylogik -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+  <!-- Din övriga sida nedan (exempelvis startsidan) -->
+  <h1>Välkommen till TryggtBesök</h1>
+  <p>Här kan du navigera till olika delar med hjälp av menyn ovan.</p>
+</body>
+    { font-family: sans-serif; background: #fff; margin: 0; padding: 20px; }
     h1 { font-size: 24px; margin-bottom: 20px; }
     .accordion { background-color: white; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; }
     .accordion:hover { background-color: #f0f0f0; }
