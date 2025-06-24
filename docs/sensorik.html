@@ -5,19 +5,6 @@
   <title>Sensorisk guide</title>
   <link rel="stylesheet" href="style.css" />
 
-  <!-- JS för menylogik -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-    function toggleContent(el) {
-      const content = el.querySelector(".content");
-      content.style.display = content.style.display === "block" ? "none" : "block";
-    }
-  </script>
-
-  <!-- Snabb inbyggd styling -->
   <style>
     body {
       font-family: sans-serif;
@@ -63,8 +50,28 @@
       right: 20px;
       z-index: 1000;
       font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+      display: block;
+      margin-bottom: 5px;
     }
   </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+    function toggleContent(el) {
+      const content = el.querySelector(".content");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </head>
 
 <body>
@@ -73,11 +80,11 @@
 
   <!-- Meny -->
   <div id="menu">
-    <a href="index.html">🏠 Hem</a><br />
-    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a><br />
-    <a href="vagen-hit.html">🗺️ Vägen hit</a><br />
-    <a href="sensorisk-guide.html">👃 Sensorisk guide</a><br />
-    <a href="aktivitetsled.html">📝 Aktivitetsled</a><br />
+    <a href="index.html">🏠 Hem</a>
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
+    <a href="vagen-hit.html">🗺️ Vägen hit</a>
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a>
     <a href="bildstod.html">🧩 Bildstöd</a>
   </div>
 
