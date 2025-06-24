@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hur man tar sig hit</title>
   <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hur man tar sig hit</title><link rel="stylesheet" href="style.css"/></head>
   <script src="menu.js"></script>
+</head>
 <body>
-  <body>
   <!-- Menyknapp -->
   <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
     <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
@@ -30,14 +31,19 @@
     }
   </script>
 
-  <!-- Din övriga sida nedan (exempelvis startsidan) -->
-  <h1>Välkommen till TryggtBesök</h1>
-  <p>Här kan du navigera till olika delar med hjälp av menyn ovan.</p>
-</body>
-  <nav><ul class="menu"><li><a href="index.html">Hem</a></li><li><a href="sensorik.html">Sensorisk guide</a></li><li><a href="vagen.html">Hur man tar sig hit</a></li><li><a href="miljo.html">Hur det ser ut</a></li><li><a href="video.html">Videor</a></li></ul></nav>
-  <header><h1>Hur man tar sig hit</h1></header>
+  <!-- Sidhuvud -->
+  <header>
+    <h1>Hur man tar sig hit</h1>
+  </header>
+
+  <!-- Innehåll -->
   <main>
-    <p><!-- Williams vägbeskrivning behålls nedan --></p>
+    <p>Här beskriver vi hur du enkelt kan ta dig till platsen. Du kan åka buss, bil eller cykla. Exempelvis:</p>
+    <ul>
+      <li>🚍 Närmaste busshållplats är <strong>Station X</strong> – 5 min gångväg</li>
+      <li>🚗 Parkering finns vid <strong>entré B</strong>, gratis i 2 timmar</li>
+      <li>🚲 Cykelställ finns direkt utanför ingången</li>
+    </ul>
   </main>
 </body>
 </html>
