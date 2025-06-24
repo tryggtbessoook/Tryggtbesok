@@ -1,20 +1,78 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <title>Sensorisk guide</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JS för menylogik -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+    function toggleContent(el) {
+      const content = el.querySelector(".content");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+  <!-- Snabb inbyggd styling -->
   <style>
-    <script src="menu.js"></script>
-    body 
-    <body>
+    body {
+      font-family: sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .accordion {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .accordion:hover {
+      background-color: #f0f0f0;
+    }
+    .content {
+      display: none;
+      padding: 15px 0 0 0;
+      color: #333;
+    }
+    #menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
   <!-- Menyknapp -->
-  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
-    <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
-  </div>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
 
   <!-- Meny -->
-  <div id="menu" style="display: none; position: fixed; top: 60px; right: 20px; background-color: white; border: 1px solid #ccc; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+  <div id="menu">
     <a href="index.html">🏠 Hem</a><br />
     <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a><br />
     <a href="vagen-hit.html">🗺️ Vägen hit</a><br />
@@ -23,26 +81,6 @@
     <a href="bildstod.html">🧩 Bildstöd</a>
   </div>
 
-  <!-- JS för menylogik -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-
-  <!-- Din övriga sida nedan (exempelvis startsidan) -->
-  <h1>Välkommen till TryggtBesök</h1>
-  <p>Här kan du navigera till olika delar med hjälp av menyn ovan.</p>
-</body>
-    { font-family: sans-serif; background: #fff; margin: 0; padding: 20px; }
-    h1 { font-size: 24px; margin-bottom: 20px; }
-    .accordion { background-color: white; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; }
-    .accordion:hover { background-color: #f0f0f0; }
-    .content { display: none; padding: 15px 0 0 0; color: #333; }
-  </style>
-</head>
-<body>
   <h1>Sensorisk guide</h1>
 
   <div class="accordion" onclick="toggleContent(this)">
@@ -82,24 +120,16 @@
     </div>
   </div>
 
-  <!-- Personalomsättning -->
   <div class="accordion" onclick="toggleContent(this)">
     👥 Personalomsättning
     <div class="content">
       <p>- Lunchtid: Folk sitter vid matbordet och äter tillsammans.</p>
       <p>- Kontoret under övrig tid på dagen: Huvudsakligen vistelse i kontorsutrymmet.</p>
       <p>- Loungen: Besökare kan slå sig ner i soffor och fåtöljer, ofta med en kopp kaffe eller en tidning.</p>
-      <p>- Rörlighet mellan utrymmen: Personal och gäster hämtar dryck eller mat från kök; pauser sker oftast via kontor → toalett.</p>
+      <p>- Rörlighet mellan utrymmen: Personal och gäster hämtar dryck eller mat från kök; pauser sker oftast via kontor → toalett.</p>
       <p>- Allmän aktivitet: Någon promenerar genom korridorerna, kikar in i olika rum eller bara sträcker på benen.</p>
       <p>- Helhetsintryck: Lokalen känns både inbjudande och levande tack vare kontinuerlig rörelse.</p>
     </div>
   </div>
-
-  <script>
-    function toggleContent(el) {
-      const content = el.querySelector(".content");
-      content.style.display = content.style.display === "block" ? "none" : "block";
-    }
-  </script>
 </body>
 </html>
