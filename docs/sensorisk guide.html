@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sensorisk guide</title>
-
   <style>
     body {
       font-family: sans-serif;
@@ -42,33 +41,46 @@
       padding: 10px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1001;
     }
     .menu-button {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 1000;
+      z-index: 1002;
       font-size: 24px;
       background: none;
       border: none;
       cursor: pointer;
     }
-    a {
+    #menu a {
       text-decoration: none;
       color: #000;
       display: block;
       margin-bottom: 5px;
+      font-size: 18px;
+    }
+    #menu a:hover {
+      text-decoration: underline;
     }
   </style>
-
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
     }
     function toggleContent(el) {
       const content = el.querySelector(".content");
-      content.style.display = content.style.display === "block" ? "none" : "block";
+      const currentDisplay = window.getComputedStyle(content).display;
+      if (currentDisplay === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
     }
   </script>
 </head>
@@ -78,14 +90,14 @@
   <button class="menu-button" onclick="toggleMenu()">☰</button>
 
   <!-- Meny -->
-  <div id="menu">
+  <nav id="menu">
     <a href="index.html">🏠 Hem</a>
     <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
     <a href="vagen-hit.html">🗺️ Vägen hit</a>
     <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
     <a href="aktivitetsled.html">📝 Aktivitetsled</a>
     <a href="bildstod.html">🧩 Bildstöd</a>
-  </div>
+  </nav>
 
   <h1>Sensorisk guide</h1>
 
