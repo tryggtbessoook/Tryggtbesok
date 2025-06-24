@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>hur ser de ut</title>
   <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Videor</title><link rel="stylesheet" href="style.css"/></head>
   <script src="menu.js"></script>
+</head>
 <body>
-  <body>
   <!-- Menyknapp -->
   <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
     <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
@@ -30,11 +31,20 @@
     }
   </script>
 
-  <!-- Din övriga sida nedan (exempelvis startsidan) -->
-  <h1>Välkommen till TryggtBesök</h1>
-  <p>Här kan du navigera till olika delar med hjälp av menyn ovan.</p>
-</body>
- 
-  <!-- Video-kod -->
+  <!-- Sidhuvud -->
+  <header>
+    <h1>Videor</h1>
+  </header>
+
+  <!-- Innehåll -->
+  <main>
+    <p>Här kan du se filmer som visar hur platsen ser ut, hur man tar sig in och vad som väntar.</p>
+
+    <!-- Exempelvideo -->
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HÄR" 
+        title="YouTube-video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </main>
 </body>
 </html>
