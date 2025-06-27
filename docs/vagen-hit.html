@@ -3,41 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>vagen-hit</title>
+  <title>Vägen hit</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="menu.js"></script>
+  <script src="menu.js" defer></script>
 </head>
 <body>
   <!-- Menyknapp -->
-  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
-    <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
-  </div>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
 
   <!-- Meny -->
-  <div id="menu" style="display: none; position: fixed; top: 60px; right: 20px; background-color: white; border: 1px solid #ccc; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-    <a href="index.html">🏠 Hem</a><br />
-    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a><br />
-    <a href="vagen-hit.html">🗺️ Vägen hit</a><br />
-    <a href="sensorisk-guide.html">👃 Sensorisk guide</a><br />
-    <a href="aktivitetsled.html">📝 Aktivitetsled</a><br />
+  <nav id="menu">
+    <a href="index.html">🏠 Hem</a>
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
+    <a href="vagen-hit.html">🗺️ Vägen hit</a>
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a>
     <a href="bildstod.html">🧩 Bildstöd</a>
-  </div>
+  </nav>
 
-  <!-- JS för menylogik -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-
-  <!-- Sidhuvud -->
   <header>
     <h1>Hur man tar sig hit</h1>
   </header>
 
-  <!-- Innehåll -->
-  <main style="display: flex; justify-content: center; padding: 20px;">
+  <main class="centered-content">
     <iframe
       width="360"
       height="640"
