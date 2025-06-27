@@ -4,9 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vägen hit</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="menu.js" defer></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1002;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    #menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1001;
+    }
+
+    #menu a {
+      text-decoration: none;
+      color: #000;
+      display: block;
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    #menu a:hover {
+      text-decoration: underline;
+    }
+
+    .centered-content {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    iframe {
+      max-width: 100%;
+      height: auto;
+      border: none;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </head>
+
 <body>
   <!-- Menyknapp -->
   <button class="menu-button" onclick="toggleMenu()">☰</button>
@@ -19,19 +85,21 @@
     <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
     <a href="aktivitetsled.html">📝 Aktivitetsled</a>
     <a href="bildstod.html">🧩 Bildstöd</a>
+    <a href="om-oss.html">ℹ️ Om oss</a>
   </nav>
 
+  <!-- Sidhuvud -->
   <header>
-    <h1>Hur man tar sig hit</h1>
+    <h1>Vägen hit</h1>
   </header>
 
+  <!-- Innehåll -->
   <main class="centered-content">
     <iframe
       width="360"
       height="640"
       src="https://www.youtube.com/embed/88nWu4DPHas"
       title="Hur man tar sig hit"
-      frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
