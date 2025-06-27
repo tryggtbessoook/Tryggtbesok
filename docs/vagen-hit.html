@@ -12,15 +12,6 @@
       padding: 0;
     }
 
-    header {
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin: 0;
-    }
-
     .menu-button {
       position: fixed;
       top: 20px;
@@ -57,10 +48,14 @@
       text-decoration: underline;
     }
 
-    .centered-content {
-      display: flex;
-      justify-content: center;
+    main {
       padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
     }
 
     iframe {
@@ -75,7 +70,6 @@
       menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     }
 
-    // Klick utanför menyn stänger den
     document.addEventListener('click', function(event) {
       const menu = document.getElementById('menu');
       const button = document.querySelector('.menu-button');
@@ -90,7 +84,7 @@
   <!-- Menyknapp -->
   <button class="menu-button" onclick="toggleMenu()">☰</button>
 
-  <!-- Meny (visas efter klick) -->
+  <!-- Meny -->
   <nav id="menu">
     <a href="index.html">🏠 Hem</a>
     <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
@@ -101,13 +95,9 @@
     <a href="om-oss.html">ℹ️ Om oss</a>
   </nav>
 
-  <!-- Sidhuvud -->
-  <header>
-    <h1>Vägen hit</h1>
-  </header>
-
   <!-- Innehåll -->
-  <main class="centered-content">
+  <main>
+    <h1>Vägen hit</h1>
     <iframe
       width="360"
       height="640"
