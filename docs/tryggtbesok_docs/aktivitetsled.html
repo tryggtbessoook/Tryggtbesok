@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aktivitetsled</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="menu.js"></script>
+</head>
+<body>
+  <!-- Menyknapp -->
+  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+    <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
+  </div>
+
+  <!-- Meny -->
+  <div id="menu" style="display: none; position: fixed; top: 60px; right: 20px; background-color: white; border: 1px solid #ccc; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <a href="index.html">🏠 Hem</a><br />
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a><br />
+    <a href="vagen-hit.html">🗺️ Vägen hit</a><br />
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a><br />
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a><br />
+    <a href="bildstod.html">🧩 Bildstöd</a><br />
+    <a href="#about">ℹ️ Om oss</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+  <!-- Innehåll -->
+  <main style="padding: 2em;">
+    <h1>📝 Aktivitetsled</h1>
+    <p>Här kan du ladda ner aktivitetsled som PDF:</p>
+    <a href="aktivitetsled.pdf" target="_blank" style="font-size: 18px; color: blue;">
+      📄 Ladda ner aktivitetsled (PDF)
+    </a>
+  </main>
+</body>
+</html>
