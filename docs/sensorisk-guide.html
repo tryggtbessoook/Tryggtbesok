@@ -67,25 +67,17 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      if (menu.style.display === 'block') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'block';
-      }
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
     }
+
     function toggleContent(el) {
       const content = el.querySelector(".content");
-      const currentDisplay = window.getComputedStyle(content).display;
-      if (currentDisplay === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
+      content.style.display = (window.getComputedStyle(content).display === "block") ? "none" : "block";
     }
   </script>
 </head>
-
 <body>
+
   <!-- Menyknapp -->
   <button class="menu-button" onclick="toggleMenu()">☰</button>
 
@@ -105,61 +97,60 @@
   <div class="accordion" onclick="toggleContent(this)">
     👃 Hur luktar det hos oss?
     <div class="content">
-      <p>I byggnaden och lokalerna ni kommer att vistas i, så kommer inte några starka dofter av parfym dyka upp. Då vi strävar efter en sådan doftneutral miljö som möjligt.</p>
-      <p>Möjliga dofter som kan tänka sig dyka upp i lokalerna är:</p>
-      <p>- Nybryggt kaffe vid nära vistelse av köket</p>
-      <p>- Matavfall, frukt och nybakat havre från fruktbaren i köket</p>
-      <p>- Nyrenoverade lokaler resulterar i dofter som nymålat med lätta kemiska dofter, spån och skog från nytt trä</p>
+      <p>I Magelungens lokaler finns inga doftsättningar. Doften ändras beroende på var du är. Ibland kan doften kännas stark eller störande. (Se fliken ”Hur det ser ut hos oss”, där starka sensoriska intryck är markerade.)</p>
+      <p>Du kan förvänta dig följande dofter hos oss:</p>
+      <ul>
+        <li>Nybryggt kaffe</li>
+        <li>Mat och matavfall</li>
+        <li>Rengöringsmedel (i toaletterna samt kök)</li>
+      </ul>
     </div>
   </div>
 
   <div class="accordion" onclick="toggleContent(this)">
     🔉 Hur låter det hos oss?
     <div class="content">
-      <p>Vi kunde inte spela in ljud för att få en sådan exakt resultat som det går att uppnå. Men på en generaliserad nivå kunde vi fånga viktiga aspekter som är värda att nämna.</p>
-      <p>Du kan förvänta dig ljud som:</p>
-      <p>- Kaffemaskin som maler bönor</p>
-      <p>- Lugn musik i bakgrunden som går att stänga av</p>
-      <p>- Människor som pratar</p>
-    </div>
-  </div>
-
-  <div class="accordion" onclick="toggleContent(this)">
-    ✋ Hur upplevs miljön hos oss?
-    <div class="content">
-      <p>Temperaturen hos oss är ca 23-25 grader och kan variera beroende på årstid och önskan från personal då det går att justera temperatur automatiskt.</p>
-      <p>Ljuset i lokalerna varierar beroende på vart du befinner dig:</p>
-      <p>- I köket och entrén så är ljusen svaga på omkring 360-500 lux. De är även dimningsbara.</p>
-      <p>- Lamporna i loungen är mer starka upp mot över 1000 lux och pekar åt olika håll. Mest för att belysa olika växter.</p>
-      <p>Du kan förvänta dig dessa material i lokalerna:</p>
-      <p>- Golvmattor</p>
-      <p>- Tygsoffor</p>
-      <p>- Bord i trä</p>
-      <p>- Stolar i trä och plast</p>
+      <p>Ljudnivån förändras beroende på tid och plats. Vid lunchtid är det mycket prat vid matbordet. Innan föreläsningar kan det vara många personer som pratar. Annars hörs mest småprat i lokalerna. Kaffemaskinen hörs i hela loungen. Andra ljud kan höras från köket. I föreläsningssalen kan projektorn låta. (Se fliken ”Hur det ser ut hos oss”, där starka sensoriska intryck är markerade.)</p>
+      <p>Du kan förvänta dig följande ljud hos oss:</p>
+      <ul>
+        <li>Kaffebryggare</li>
+        <li>Prat i allmänhet, främst småprat</li>
+        <li>Projektor</li>
+        <li>Diskmaskin</li>
+        <li>Övriga köksrelaterade ljud (skramlande, hackande, knivar, mikro, diskmaskin med mera)</li>
+      </ul>
     </div>
   </div>
 
   <div class="accordion" onclick="toggleContent(this)">
     💡 Hur upplevs ljuset hos oss?
     <div class="content">
-      <p>Ljuset varierar mellan olika delar av lokalen:</p>
-      <p>- Entré och kök: Svagare ljus, ca 360–500 lux. Ljuskällorna är dimningsbara för att minska överstimulering.</p>
-      <p>- Lounge: Starkt ljus över 1000 lux, ofta riktat mot växter eller detaljer i inredningen.</p>
-      <p>- Kontor: Neutral belysning anpassad för koncentration och arbete.</p>
-      <p>- Toalett och vilorum: Mjukt ljus som inte bländar.</p>
-      <p>Det går att justera vissa ljuskällor, särskilt i gemensamma utrymmen, för att möta olika behov.</p>
+      <p>I Magelungens lokaler används dimningsbara lampor som primär ljuskälla. Utöver dessa finns även starkare växtlampor i loungen samt på flera andra platser.</p>
+      <p>(Se fliken ”Hur det ser ut hos oss”, där starka sensoriska intryck är markerade.)</p>
+    </div>
+  </div>
+
+  <div class="accordion" onclick="toggleContent(this)">
+    ✋ Hur upplevs miljön hos oss?
+    <div class="content">
+      <p>Hos Magelungen stiftelse är temperaturen alltid behaglig på grund av att vi har en termostat och kan justera temperaturen efter behag.</p>
+      <p>Du kan förvänta dig material såsom golvmattor, tygsoffor, träbord med mera.</p>
+      <p>Det finns en handikapptoalett vid entrén som är markerad på ritningen (se ”Hur ser det ut här”).</p>
+      <p><strong>OBS:</strong> Dörrarna vid ingången innan hissen är automatiska.</p>
     </div>
   </div>
 
   <div class="accordion" onclick="toggleContent(this)">
     👥 Personomsättning
     <div class="content">
-      <p>- Lunchtid: Folk sitter vid matbordet och äter tillsammans.</p>
-      <p>- Kontoret under övrig tid på dagen: Huvudsakligen vistelse i kontorsutrymmet.</p>
-      <p>- Loungen: Besökare kan slå sig ner i soffor och fåtöljer, ofta med en kopp kaffe eller en tidning.</p>
-      <p>- Rörlighet mellan utrymmen: Personal och gäster hämtar dryck eller mat från kök; pauser sker oftast via kontor → toalett.</p>
-      <p>- Allmän aktivitet: Någon promenerar genom korridorerna, kikar in i olika rum eller bara sträcker på benen.</p>
-      <p>- Helhetsintryck: Lokalen känns både inbjudande och levande tack vare kontinuerlig rörelse.</p>
+      <ul>
+        <li>Under lunchtid sitter många personer vid matbordet och äter tillsammans.</li>
+        <li>Övriga delar av dagen rör sig personer främst i kontorsdelen, men det kan också vara elever som går till eller från en föreläsning i andra delar av lokalen.</li>
+        <li>I loungen sitter besökare ofta i soffor eller fåtöljer, ibland med kaffe eller något att äta.</li>
+        <li>Personer rör sig mellan olika delar av lokalen, till exempel för att hämta dryck eller mat från köket.</li>
+        <li>Pauser innebär ofta att någon går från kontoret till toaletten.</li>
+        <li>Det är vanligt att personer går i korridorerna, tittar in i olika rum eller bara sträcker på benen.</li>
+      </ul>
     </div>
   </div>
 
