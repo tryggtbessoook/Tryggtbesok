@@ -1,28 +1,91 @@
-<index.html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TryggtBesök</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #eee;
+    }
+
+    main {
+      padding: 2em;
+    }
+
+    #intro {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 2.5em;
+    }
+
+    #menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    #menu a {
+      display: block;
+      padding: 5px 0;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+  </style>
 </head>
-  <script src="menu.js"></script>
 <body>
-<body>
+
   <!-- Menyknapp -->
-  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
-    <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
-  </div>
+  <button onclick="toggleMenu()" class="menu-button">☰</button>
 
   <!-- Meny -->
-  <div id="menu" style="display: none; position: fixed; top: 60px; right: 20px; background-color: white; border: 1px solid #ccc; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-    <a href="index.html">🏠 Hem</a><br />
-    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a><br />
-    <a href="vagen-hit.html">🗺️ Vägen hit</a><br />
-    <a href="sensorisk-guide.html">👃 Sensorisk guide</a><br />
-    <a href="aktivitetsled.html">📝 Aktivitetsled</a><br />
+  <div id="menu">
+    <a href="index.html">🏠 Hem</a>
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
+    <a href="vagen-hit.html">🗺️ Vägen hit</a>
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a>
     <a href="bildstod.html">🧩 Bildstöd</a>
+    <a href="#intro">ℹ️ Om oss</a> <!-- Ny flik för "Om oss" -->
   </div>
 
   <!-- JS för menylogik -->
@@ -33,21 +96,23 @@
     }
   </script>
 
-  <!-- Din övriga sida nedan (exempelvis startsidan) -->
+  <!-- Innehåll -->
   <h1>Välkommen till TryggtBesök</h1>
-  <p>Här kan du navigera till olika delar med hjälp av menyn ovan.</p>
-</body>
+
   <header>
     <p>Vi hjälper dig förbereda och förstå din omgivning inför ditt besök.</p>
   </header>
+
   <main>
     <section id="intro">
       <h2>Om oss</h2>
       <p>Vi är ett team som vill göra besök tryggare genom tydlig information och tillgänglighet.</p>
     </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 TryggtBesök</p>
+    <p>&copy; 2025 TryggtBesök | <a href="#intro">Om oss</a></p>
   </footer>
+
 </body>
 </html>
