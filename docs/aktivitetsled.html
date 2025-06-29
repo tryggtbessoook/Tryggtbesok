@@ -3,41 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aktivitetsled</title>
+  <title>Aktivitetsled – TryggtBesök</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="menu.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    main {
+      padding: 2em;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    .download-link {
+      font-size: 1.1em;
+      color: #007acc;
+      text-decoration: none;
+    }
+    .download-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Menyknapp */
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    /* Meny */
+    #menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      padding: 10px;
+      z-index: 1000;
+    }
+    #menu a {
+      display: block;
+      margin: 8px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+    }
+    #menu a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+
   <!-- Menyknapp -->
-  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
-    <button onclick="toggleMenu()" style="font-size: 24px;">☰</button>
-  </div>
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Öppna meny">☰</button>
 
+  <!-- Meny som döljs/visas -->
+  <nav id="menu" aria-hidden="true">
+    <a href="index.html">🏠 Hem</a>
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
+    <a href="vagen-hit.html">🗺️ Vägen hit</a>
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a>
+    <a href="bildstod.html">🧩 Bildstöd</a>
+    <a href="om-oss.html">ℹ️ Om oss</a>
+  </nav>
 
-   <!-- Menyknapp -->
-  <button class="menu-button" onclick="toggleMenu()">☰</button>
-    <a href="index.html">🏠 Hem</a><br />
-    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a><br />
-    <a href="vagen-hit.html">🗺️ Vägen hit</a><br />
-    <a href="sensorisk-guide.html">👃 Sensorisk guide</a><br />
-    <a href="aktivitetsled.html">📝 Aktivitetsled</a><br />
-    <a href="bildstod.html">🧩 Bildstöd</a><br />
-    <a href="#about">ℹ️ Om oss</a>
-  </div>
+  <!-- Innehåll -->
+  <main>
+    <h1>📝 Aktivitetsled</h1>
+    <p>Här kan du ladda ner aktivitetsled som PDF:</p>
+    <a class="download-link"
+       href="https://npfprojektet.github.io/tryggtbesok/aktivitetsled.pdf"
+       target="_blank">
+      📄 Ladda ner aktivitetsled (PDF)
+    </a>
+  </main>
 
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      const isOpen = menu.style.display === 'block';
+      menu.style.display = isOpen ? 'none' : 'block';
+      menu.setAttribute('aria-hidden', isOpen);
     }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('menu');
+      const btn = document.querySelector('.menu-button');
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.style.display = 'none';
+        menu.setAttribute('aria-hidden', 'true');
+      }
+    });
   </script>
 
-  <!-- Innehåll -->
-  <main style="padding: 2em;">
-    <h1>📝 Aktivitetsled</h1>
-    <p>Här kan du ladda ner aktivitetsled som PDF:</p>
- <a href="https://npfprojektet.github.io/tryggtbesok/aktivitetsled.pdf" target="_blank" style="font-size: 18px; color: blue;">
-  📄 Ladda ner aktivitetsled (PDF)
-</a>
 </body>
 </html>
