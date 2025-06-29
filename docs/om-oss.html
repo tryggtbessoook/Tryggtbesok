@@ -1,1 +1,214 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Om oss – TryggtBesök</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      line-height: 1.6;
+    }
+    header, footer {
+      text-align: center;
+      background: #eee;
+      padding: 1em;
+    }
+    h1 {
+      margin-top: 80px;
+      font-size: 2em;
+    }
+    nav#menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
+      padding: 10px;
+    }
+    nav#menu a {
+      display: block;
+      margin: 6px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+    }
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 1em 0;
+    }
+    .toc a {
+      padding: 8px 12px;
+      background: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    section {
+      max-width: 700px;
+      margin: 2em auto;
+      padding: 0 1em;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    section + section {
+      margin-top: 1em;
+    }
+    section h2 {
+      margin-top: 0;
+    }
+    .team-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+    }
+    .team-member {
+      text-align: center;
+      width: 120px;
+    }
+    .team-member img {
+      width: 100%;
+      border-radius: 50%;
+    }
+    footer p {
+      margin: 0.5em 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
 
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Meny">☰</button>
+
+  <nav id="menu" aria-hidden="true">
+    <a href="index.html">🏠 Hem</a>
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
+    <a href="vagen-hit.html">🗺️ Vägen hit</a>
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a>
+    <a href="bildstod.html">🧩 Bildstöd</a>
+    <a href="om-oss.html">ℹ️ Om oss</a>
+  </nav>
+
+  <header>
+    <h1>Om oss</h1>
+    <!-- In‑page table of contents -->
+    <nav class="toc">
+      <a href="#intro">Intro</a>
+      <a href="#historia">Historia</a>
+      <a href="#vision">Vision &amp; Uppdrag</a>
+      <a href="#team">Team</a>
+      <a href="#varderingar">Värderingar</a>
+      <a href="#csr">Samhällsansvar</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Intro</h2>
+      <p>TryggtBesök är en ideellt initierad tjänst som hjälper personer med NPF
+      (neuropsykiatriska funktionsnedsättningar) att förbereda sig inför
+      besök i offentliga och kommersiella miljöer. Med hjälp av visuella guider,
+      bildstöd, kartor och tydlig information blir besöket tryggare och mer
+      förutsägbart.</p>
+    </section>
+
+    <section id="historia">
+      <h2>Historia</h2>
+      <p>Det började när William upptäckte en lucka i samhällets stödmaterial för NPF.
+      Han insåg snabbt att projektet var för stort för en person och tog därför
+      kontakt med barndomsvännen Noah. Tillsammans grundade de TryggtBesök vid 17
+      års ålder med målsättningen:</p>
+      <blockquote>Att använda digitala verktyg för att sprida trygghet, tillgänglighet och förståelse.</blockquote>
+    </section>
+
+    <section id="vision">
+      <h2>Vision &amp; Uppdrag</h2>
+      <p><strong>Vision:</strong> Ett samhälle där alla, oavsett förutsättningar, känner sig
+      trygga att delta i vardagslivet.</p>
+      <p><strong>Uppdrag:</strong> Att göra offentliga miljöer förutsägbara och anpassade
+      genom att erbjuda visuellt och praktiskt stöd för personer med NPF.</p>
+    </section>
+
+    <section id="team">
+      <h2>Team</h2>
+      <div class="team-list">
+        <div class="team-member">
+          <img src="bilder/william.jpg" alt="William Robertsson">
+          <p>William Robertsson</p>
+        </div>
+        <div class="team-member">
+          <img src="bilder/noah.jpg" alt="Noah Beyeler">
+          <p>Noah Beyeler</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="varderingar">
+      <h2>Värderingar</h2>
+      <ul>
+        <li><strong>Inkludering:</strong> Alla ska känna sig välkomna, lyssnade på och respekterade.</li>
+        <li><strong>Empati:</strong> Vi lyssnar till och förstår andras behov.</li>
+        <li><strong>Neurodiversitet:</strong> Olika hjärnor är en tillgång, inte ett hinder.</li>
+        <li><strong>Medmänsklighet:</strong> Vi tror på värme och ärlighet i möten.</li>
+        <li><strong>Samhällsnytta:</strong> Det vi bygger ska göra skillnad för fler än oss själva.</li>
+      </ul>
+    </section>
+
+    <section id="csr">
+      <h2>Samhällsansvar (CSR)</h2>
+      <p>Vi arbetar för att tillgänglighet inte ska vara ett undantag utan en självklar
+      del av hur lokaler och tjänster planeras. Genom våra förberedande material
+      bidrar vi till färre avbrutna besök, ökad självständighet för personer med NPF
+      och ett mer inkluderande samhälle.</p>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Har du frågor eller förslag? Hör gärna av dig:</p>
+      <p>
+        <a href="mailto:williamrobertsson76@gmail.com">williamrobertsson76@gmail.com</a><br>
+        <a href="mailto:noahbeyeler@icloud.com">noahbeyeler@icloud.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 TryggtBesök. All rights reserved.</p>
+    <p>Alla har rätt till ett TryggtBesök.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const expanded = menu.style.display === 'block';
+      menu.style.display = expanded ? 'none' : 'block';
+      menu.setAttribute('aria-hidden', expanded);
+    }
+  </script>
+</body>
+</html>
