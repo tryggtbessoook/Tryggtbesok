@@ -12,7 +12,7 @@
       padding: 0;
       background-color: #f9f9f9;
     }
-    header, footer {
+    header {
       text-align: center;
       padding: 1em;
       background-color: #eee;
@@ -36,18 +36,22 @@
       position: fixed;
       top: 60px;
       right: 20px;
-      background-color: white;
+      background: white;
       border: 1px solid #ccc;
-      padding: 10px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      z-index: 1000;
+      padding: 10px;
+      z-index: 999;
     }
     #menu a {
       display: block;
-      padding: 6px 0;
+      margin: 6px 0;
       text-decoration: none;
       color: #333;
+      font-size: 1rem;
+    }
+    #menu a:hover {
+      text-decoration: underline;
     }
     .video-section {
       display: flex;
@@ -79,16 +83,6 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    #about {
-      max-width: 600px;
-      margin: 4em auto 2em;
-      text-align: center;
-    }
-    footer a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-    }
     .download-link {
       display: block;
       margin-top: 1em;
@@ -108,18 +102,18 @@
 <body>
 
   <!-- Menyknapp -->
-  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Öppna meny">☰</button>
 
   <!-- Meny -->
-  <div id="menu">
+  <nav id="menu" aria-hidden="true">
     <a href="index.html">🏠 Hem</a>
     <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
     <a href="vagen-hit.html">🗺️ Vägen hit</a>
     <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
     <a href="aktivitetsled.html">📝 Aktivitetsled</a>
     <a href="bildstod.html">🧩 Bildstöd</a>
-    <a href="#about">ℹ️ Om oss</a>
-  </div>
+    <a href="om-oss.html">ℹ️ Om oss</a>
+  </nav>
 
   <!-- Rubrik -->
   <header>
@@ -153,13 +147,13 @@
       allowfullscreen>
     </iframe>
 
-    <!-- Planritning från Canva (inbäddad exakt som första version) -->
+    <!-- Planritning från Canva -->
     <h2 style="margin-top: 60px; text-align: center;">🗺️ Planritning av lokalen</h2>
     <div style="display: flex; justify-content: center;">
-      <div style="position: relative; width: 90%; max-width: 800px; height: 0; padding-top: 83.3333%; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+      <div style="position: relative; width: 90%; max-width: 800px; height: 0; padding-top: 83.3333%; box-shadow: 0 2px 8px rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px;">
+        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
           src="https://www.canva.com/design/DAGrLEfuy-w/-5Nnh1dBtojE7mX69mplAw/view?embed"
-          allowfullscreen="allowfullscreen" allow="fullscreen">
+          allowfullscreen>
         </iframe>
       </div>
     </div>
@@ -171,18 +165,27 @@
 
   </main>
 
-  <!-- JavaScript -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      const isOpen = menu.style.display === 'block';
+      menu.style.display = isOpen ? 'none' : 'block';
+      menu.setAttribute('aria-hidden', isOpen);
     }
-    function showVideo(videoPath) {
+    function showVideo(path) {
       const video = document.getElementById('mainVideo');
-      video.src = videoPath;
+      video.src = path;
       video.load();
       video.play();
     }
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('menu');
+      const btn = document.querySelector('.menu-button');
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.style.display = 'none';
+        menu.setAttribute('aria-hidden', 'true');
+      }
+    });
   </script>
 
 </body>
