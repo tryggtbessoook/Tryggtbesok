@@ -97,6 +97,13 @@
     .download-link a:hover {
       text-decoration: underline;
     }
+    .section-description {
+      text-align: center;
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto 1em;
+      padding: 0 1em;
+    }
   </style>
 </head>
 <body>
@@ -123,6 +130,12 @@
 
   <!-- Videosektion -->
   <main class="video-section">
+
+    <!-- 📍 Beskrivning ovanför knappar -->
+    <p class="section-description">
+      Under den här texten hittar du flera knappar, en för varje rum. Klickar du på en knapp öppnas en 360°-video från just det rummet.
+    </p>
+
     <div class="video-buttons">
       <button onclick="showVideo('videos/video1.mp4')">Entré</button>
       <button onclick="showVideo('videos/video4.mp4')">Köket</button>
@@ -137,8 +150,12 @@
       Din webbläsare stödjer inte videouppspelning.
     </video>
 
-    <!-- Extra YouTube Short om Magelungens plats -->
+    <!-- 🎥 Text ovanför YouTube-videon -->
     <h2 style="margin-top: 40px; text-align: center;">Magelungens lokaler</h2>
+    <p class="section-description">
+      Den här videospelaren visar en detaljerad rundtur i lokalen. Du kan pausa, spola och navigera fritt genom lokalen.
+    </p>
+
     <iframe width="360" height="640" style="margin-top: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
       src="https://www.youtube.com/embed/e9KIpNiBhqM"
       title="Beskrivning av Magelungens plats"
@@ -147,8 +164,12 @@
       allowfullscreen>
     </iframe>
 
-    <!-- Planritning från Canva -->
+    <!-- 🗺️ Text ovanför planritning -->
     <h2 style="margin-top: 60px; text-align: center;">🗺️ Planritning av lokalen</h2>
+    <p class="section-description">
+      På kartan nedan kan du se hela lokalen uppifrån. Platser med starka ljud, ljus eller dofter är markerade med färg.
+    </p>
+
     <div style="display: flex; justify-content: center;">
       <div style="position: relative; width: 90%; max-width: 800px; height: 0; padding-top: 83.3333%; box-shadow: 0 2px 8px rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px;">
         <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
