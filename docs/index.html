@@ -10,17 +10,26 @@
       font-family: sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      background-image: url('https://tryggtbessoook.github.io/Tryggtbesok/projekt%20TryggtBes%C3%B6k/images/bakgrund.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #111;
     }
 
     header, footer {
       text-align: center;
       padding: 1em;
-      background-color: #eee;
+      background-color: rgba(255, 255, 255, 0.85);
     }
 
     main {
       padding: 2em;
+      background-color: rgba(255, 255, 255, 0.85);
+      max-width: 800px;
+      margin: auto;
+      border-radius: 10px;
     }
 
     #intro {
@@ -88,7 +97,6 @@
     <a href="om-oss.html">ℹ️ Om oss</a>
   </div>
 
-  <!-- JS för menylogik -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
