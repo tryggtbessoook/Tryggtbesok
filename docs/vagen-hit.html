@@ -17,10 +17,11 @@
       top: 20px;
       right: 20px;
       z-index: 1002;
-      font-size: 28px;
+      font-size: 32px; /* ändrat från 28px till 32px */
       background: none;
       border: none;
       cursor: pointer;
+      line-height: 1;
     }
 
     #menu {
@@ -30,18 +31,20 @@
       right: 20px;
       background-color: white;
       border: 1px solid #ccc;
-      padding: 12px;
+      padding: 16px 20px; /* lite mer padding för bättre proportion */
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       z-index: 1001;
+      font-size: 32px; /* ändrat så menyn matchar knappen */
+      min-width: 200px; /* ger lite bredd så det inte krymper ihop */
     }
 
     #menu a {
       text-decoration: none;
       color: #000;
       display: block;
-      margin: 8px 0;
-      font-size: 18px;
+      margin: 12px 0; /* lite större mellanrum för att passa större text */
+      font-size: 32px; /* matchar menyns fontstorlek */
     }
 
     #menu a:hover {
