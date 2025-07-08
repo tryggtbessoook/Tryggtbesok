@@ -31,18 +31,6 @@
       padding: 15px 0 0 0;
       color: #333;
     }
-    #menu {
-      display: none;
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      background-color: white;
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      z-index: 1001;
-    }
     .menu-button {
       position: fixed;
       top: 20px;
@@ -52,18 +40,31 @@
       background: none;
       border: none;
       cursor: pointer;
+     /* Meny */
+    }
+    #menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      padding: 10px;
+      z-index: 1000;
     }
     #menu a {
-      text-decoration: none;
-      color: #000;
       display: block;
-      margin-bottom: 5px;
-      font-size: 18px;
+      margin: 8px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
     }
     #menu a:hover {
       text-decoration: underline;
-    }
-  </style>
+       }  </style>
+  
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
