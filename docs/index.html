@@ -10,6 +10,7 @@
       font-family: sans-serif;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
       background-image: url('https://tryggtbessoook.github.io/Tryggtbesok/Projekt-TryggtBesok/images/image1.png');
       background-size: cover;
       background-position: center;
@@ -22,31 +23,34 @@
       text-align: center;
       padding: 1em;
       background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      margin: 0 auto;
+      max-width: 900px;
     }
 
     main {
       padding: 2em;
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-      max-width: 800px;
-      margin: 20px auto 40px auto; /* flyttad uppåt */
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      margin: 30px auto 60px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
     }
 
     #intro {
-      max-width: 600px;
+      max-width: 700px;
       margin: auto;
       text-align: center;
     }
 
     h1 {
       text-align: center;
-      margin-top: 40px; /* flyttad högre upp */
-      font-size: 2.5em;
-      color: #fff; /* vit text */
-      text-shadow: 0 0 10px rgba(0,0,0,0.5); /* bättre kontrast mot ljus bakgrund */
+      margin-top: 40px;
+      font-size: 2.8em;
+      color: #fff;
+      text-shadow: 0 0 12px rgba(0,0,0,0.6);
     }
 
     #menu {
@@ -59,6 +63,7 @@
       padding: 10px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 999;
     }
 
     #menu a {
@@ -77,13 +82,18 @@
       background: none;
       border: none;
       cursor: pointer;
+      color: white;
+      text-shadow: 0 0 5px black;
     }
 
     footer {
       text-align: center;
       padding: 2em;
-      margin-top: 60px; /* gör att footern ligger längre ner */
+      margin-bottom: 20px;
       background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
     }
 
     footer a {
