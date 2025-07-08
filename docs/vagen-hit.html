@@ -23,30 +23,25 @@
       cursor: pointer;
       line-height: 1;
     }
-
-    #menu {
+#menu {
       display: none;
       position: fixed;
       top: 60px;
       right: 20px;
-      background-color: white;
+      background: white;
       border: 1px solid #ccc;
-      padding: 16px 20px; /* lite mer padding för bättre proportion */
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      z-index: 1001;
-      font-size: 32px; /* ändrat så menyn matchar knappen */
-      min-width: 200px; /* ger lite bredd så det inte krymper ihop */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      padding: 10px;
+      z-index: 999;
     }
-
     #menu a {
-      text-decoration: none;
-      color: #000;
       display: block;
-      margin: 12px 0; /* lite större mellanrum för att passa större text */
-      font-size: 32px; /* matchar menyns fontstorlek */
+      margin: 6px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
     }
-
     #menu a:hover {
       text-decoration: underline;
     }
