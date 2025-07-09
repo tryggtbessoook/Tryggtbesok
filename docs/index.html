@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TryggtBesök</title>
+  <title>TryggtBesök – Planritning</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
     body {
@@ -48,16 +48,18 @@
       color: #fff;
       text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
+
     .menu-button {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 999; /* lägre än menyn så menyn hamnar ovanpå */
+      z-index: 999;
       font-size: 60px;
       background: none;
       border: none;
       cursor: pointer;
     }
+
     #menu {
       display: none;
       position: fixed;
@@ -69,8 +71,9 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       padding: 20px;
-      z-index: 1001; /* högre än hamburgermenyn */
+      z-index: 1001;
     }
+
     #menu a {
       display: block;
       margin: 16px 0;
@@ -80,8 +83,9 @@
       padding: 10px;
       border-radius: 6px;
     }
+
     #menu a:hover {
-      background-color: #f0f0f0;    
+      background-color: #f0f0f0;
     }
 
     footer {
@@ -115,24 +119,44 @@
     <a href="om-oss.html">ℹ️ Om oss</a>
   </div>
 
+  <!-- Script för att öppna/stänga meny -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
     }
+
+    // Stäng menyn om man klickar utanför eller på en länk
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      const button = document.querySelector('.menu-button');
+      if (menu.style.display === 'block' &&
+          !menu.contains(event.target) &&
+          event.target !== button) {
+        menu.style.display = 'none';
+      }
+    });
+
+    // Stäng menyn när man klickar på en länk
+    const links = document.querySelectorAll('#menu a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('menu').style.display = 'none';
+      });
+    });
   </script>
 
   <!-- Innehåll -->
-  <h1>Välkommen till TryggtBesök</h1>
+  <h1>Planritning</h1>
 
   <header>
-    <p>Vi hjälper dig förbereda och förstå din omgivning inför ditt besök.</p>
+    <p>Här hittar du planritning över platsen så att du kan orientera dig bättre inför besöket.</p>
   </header>
 
   <main>
     <section id="intro">
-      <p>Vi har tagit fram förberedande material för att underlätta ert besök hos Magelungens huvudkontor så pass mycket som möjligt. Vi förstår vikten av ett lugnt, förberett och förutsägbart besök. Vårt stöd kan brett användas av vem som helst, men vi riktar oss främst till personer med NPF-diagnoser och större behov. Vårt syfte är att göra alla besök tryggare för att främja mänsklig variation och inkludering i samhället. Alla har rätt till ett Tryggt besök.</p>
-      <p>Klicka på menyn uppe till höger för att navigera runt till olika flikar och ta del av materialet.</p>
+      <p>Planritningen är ett visuellt stöd för att du i förväg ska kunna se hur platsen är uppbyggd, vilka zoner som finns och var viktiga utrymmen ligger.</p>
+      <p>Du kan använda planritningen tillsammans med våra andra stöd som bildstöd, aktivitetsled och sensorisk guide.</p>
     </section>
   </main>
 
