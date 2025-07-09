@@ -12,15 +12,16 @@
 
     .image-container {
       position: relative;
-      display: inline-block;
+      max-width: 100%;
       margin-bottom: 50px;
     }
 
     .planritning {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       border: 2px solid #ccc;
       border-radius: 8px;
+      display: block;
     }
 
     .info-icon {
@@ -34,10 +35,10 @@
       text-align: center;
       line-height: 24px;
       cursor: pointer;
+      font-size: 16px;
     }
 
     .tooltip {
-      display: none;
       position: absolute;
       background-color: white;
       color: #333;
@@ -45,7 +46,8 @@
       border: 1px solid #ccc;
       border-radius: 6px;
       width: 200px;
-      z-index: 100;
+      display: none;
+      z-index: 10;
     }
 
     .info-icon:hover + .tooltip,
@@ -62,26 +64,26 @@
     <img src="Magelungen/Magelungen1.png" alt="Planritning med zoner" class="planritning">
 
     <!-- Entré -->
-    <div class="info-icon" style="top: 15%; left: 10%;">?</div>
-    <div class="tooltip" style="top: 18%; left: 10%;">
+    <div class="info-icon" style="top: 12%; left: 9%;">?</div>
+    <div class="tooltip" style="top: 16%; left: 9%;">
       Här kommer du in – Entrén. Ljud, ljus och många intryck kan förekomma här.
     </div>
 
     <!-- Lounge -->
-    <div class="info-icon" style="top: 30%; left: 35%;">?</div>
-    <div class="tooltip" style="top: 33%; left: 35%;">
+    <div class="info-icon" style="top: 29%; left: 36%;">?</div>
+    <div class="tooltip" style="top: 33%; left: 36%;">
       Loungeområde – plats för att vänta, varva ner och anpassa sig.
     </div>
 
     <!-- Kök -->
-    <div class="info-icon" style="top: 50%; left: 60%;">?</div>
-    <div class="tooltip" style="top: 53%; left: 60%;">
+    <div class="info-icon" style="top: 50%; left: 63%;">?</div>
+    <div class="tooltip" style="top: 54%; left: 63%;">
       Här är köket. Doft av mat och sorl kan förekomma.
     </div>
 
     <!-- Klassrum -->
-    <div class="info-icon" style="top: 70%; left: 40%;">?</div>
-    <div class="tooltip" style="top: 73%; left: 40%;">
+    <div class="info-icon" style="top: 69%; left: 39%;">?</div>
+    <div class="tooltip" style="top: 73%; left: 39%;">
       Klassrummet – lugn zon för koncentration och instruktioner.
     </div>
   </div>
