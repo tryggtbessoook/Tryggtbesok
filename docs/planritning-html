@@ -1,81 +1,93 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Planritning Magelungen</title>
+  <meta charset="UTF-8">
+  <title>Planritning – Magelungen</title>
   <style>
     body {
       font-family: sans-serif;
-      margin: 0;
-      background: #f5f5f5;
+      margin: 2rem;
+      background-color: #f7f7f7;
     }
 
-    .container {
+    .image-container {
       position: relative;
-      max-width: 1000px;
-      margin: 0 auto;
+      display: inline-block;
+      margin-bottom: 50px;
     }
 
     .planritning {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      display: block;
+      border: 2px solid #ccc;
+      border-radius: 8px;
     }
 
-    .hotspot {
+    .info-icon {
       position: absolute;
-      width: 30px;
-      height: 30px;
-      background-color: #007BFF;
+      width: 24px;
+      height: 24px;
+      background-color: #007bff;
       color: white;
+      font-weight: bold;
       border-radius: 50%;
       text-align: center;
-      line-height: 30px;
+      line-height: 24px;
       cursor: pointer;
-      font-weight: bold;
-      border: 2px solid white;
-      box-shadow: 0 0 6px rgba(0,0,0,0.3);
     }
 
     .tooltip {
       display: none;
       position: absolute;
-      background: white;
+      background-color: white;
+      color: #333;
+      padding: 8px;
       border: 1px solid #ccc;
-      padding: 10px;
-      max-width: 200px;
-      z-index: 10;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      width: 200px;
+      z-index: 100;
     }
 
-    .hotspot:hover + .tooltip,
-    .hotspot:focus + .tooltip {
+    .info-icon:hover + .tooltip,
+    .info-icon:focus + .tooltip {
       display: block;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="Magelungen/magelungen-planritning.png" alt="Planritning Magelungen" class="planritning">
+
+  <h1>Planritning – Magelungen</h1>
+
+  <div class="image-container">
+    <img src="Magelungen/magelungen-planritning.png" alt="Planritning med zoner" class="planritning">
 
     <!-- Entré -->
-    <div class="hotspot" style="top: 20%; left: 10%;" tabindex="0">?</div>
-    <div class="tooltip" style="top: 25%; left: 10%;">Här är du i entrén. En öppen yta där man först kommer in.</div>
+    <div class="info-icon" style="top: 15%; left: 10%;">?</div>
+    <div class="tooltip" style="top: 18%; left: 10%;">
+      Här kommer du in – Entrén. Ljud, ljus och många intryck kan förekomma här.
+    </div>
 
     <!-- Lounge -->
-    <div class="hotspot" style="top: 30%; left: 40%;" tabindex="0">?</div>
-    <div class="tooltip" style="top: 35%; left: 40%;">Här är loungen, en plats för vila och informella samtal.</div>
+    <div class="info-icon" style="top: 30%; left: 35%;">?</div>
+    <div class="tooltip" style="top: 33%; left: 35%;">
+      Loungeområde – plats för att vänta, varva ner och anpassa sig.
+    </div>
 
     <!-- Kök -->
-    <div class="hotspot" style="top: 50%; left: 70%;" tabindex="0">?</div>
-    <div class="tooltip" style="top: 55%; left: 70%;">Här ligger köket – en sensorisk plats med ljud och lukt.</div>
+    <div class="info-icon" style="top: 50%; left: 60%;">?</div>
+    <div class="tooltip" style="top: 53%; left: 60%;">
+      Här är köket. Doft av mat och sorl kan förekomma.
+    </div>
 
     <!-- Klassrum -->
-    <div class="hotspot" style="top: 65%; left: 30%;" tabindex="0">?</div>
-    <div class="tooltip" style="top: 70%; left: 30%;">Här är klassrummet där undervisningen sker.</div>
-
+    <div class="info-icon" style="top: 70%; left: 40%;">?</div>
+    <div class="tooltip" style="top: 73%; left: 40%;">
+      Klassrummet – lugn zon för koncentration och instruktioner.
+    </div>
   </div>
+
+  <h2>Sensorikbild</h2>
+  <img src="Magelungen/magelungen-planritning2.png" alt="Sensorisk plan" class="planritning">
+
 </body>
 </html>
