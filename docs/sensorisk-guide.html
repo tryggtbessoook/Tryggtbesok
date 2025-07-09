@@ -35,11 +35,14 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 1002; /* högre än menyn */
+      z-index: 999;
       font-size: 60px;
       background: none;
       border: none;
       cursor: pointer;
+    }
+    .menu-button.hide {
+      display: none;
     }
     #menu {
       display: none;
@@ -70,6 +73,31 @@
       background-color: #f0f0f0;
     }
   </style>
+  <script>
+    function toggleMenu(event) {
+      event.stopPropagation();
+      const menu = document.getElementById('menu');
+      const button = document.querySelector('.menu-button');
+
+      menu.classList.toggle('active');
+      button.classList.toggle('hide');
+    }
+
+    function toggleContent(el) {
+      const content = el.querySelector(".content");
+      content.style.display = (window.getComputedStyle(content).display === "block") ? "none" : "block";
+    }
+
+    document.addEventListener('click', function (event) {
+      const menu = document.getElementById('menu');
+      const button = document.querySelector('.menu-button');
+
+      if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.remove('active');
+        button.classList.remove('hide');
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -84,6 +112,7 @@
     <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
     <a href="aktivitetsled.html">📝 Aktivitetsled</a>
     <a href="bildstod.html">🧩 Bildstöd</a>
+    <a href="planritning.html">📐 Planritning</a>
     <a href="om-oss.html">ℹ️ Om oss</a>
   </nav>
 
@@ -92,28 +121,46 @@
   <div class="accordion" onclick="toggleContent(this)">
     👃 Hur luktar det hos oss?
     <div class="content">
-      <p>I Magelungens lokaler finns inga doftsättningar...</p>
+      <p>I Magelungens lokaler finns inga doftsättningar. Doften ändras beroende på var du är. Ibland kan doften kännas stark eller störande. (Se fliken ”Hur det ser ut hos oss”, där starka sensoriska intryck är markerade.)</p>
+      <p>Du kan förvänta dig följande dofter hos oss:</p>
+      <ul>
+        <li>Nybryggt kaffe</li>
+        <li>Mat och matavfall</li>
+        <li>Rengöringsmedel (i toaletterna samt kök)</li>
+      </ul>
     </div>
   </div>
 
   <div class="accordion" onclick="toggleContent(this)">
     🔉 Hur låter det hos oss?
     <div class="content">
-      <p>Ljudnivån förändras beroende på tid och plats...</p>
+      <p>Ljudnivån förändras beroende på tid och plats. Vid lunchtid är det mycket prat vid matbordet. Innan föreläsningar kan det vara många personer som pratar. Annars hörs mest småprat i lokalerna. Kaffemaskinen hörs i hela loungen. Andra ljud kan höras från köket. I föreläsningssalen kan projektorn låta. (Se fliken ”Hur det ser ut hos oss”, där starka sensoriska intryck är markerade.)</p>
+      <p>Du kan förvänta dig följande ljud hos oss:</p>
+      <ul>
+        <li>Kaffebryggare</li>
+        <li>Prat i allmänhet, främst småprat</li>
+        <li>Projektor</li>
+        <li>Diskmaskin</li>
+        <li>Övriga köksrelaterade ljud (skramlande, hackande, knivar, mikro, diskmaskin med mera)</li>
+      </ul>
     </div>
   </div>
 
   <div class="accordion" onclick="toggleContent(this)">
     💡 Hur upplevs ljuset hos oss?
     <div class="content">
-      <p>I Magelungens lokaler används dimningsbara lampor...</p>
+      <p>I Magelungens lokaler används dimningsbara lampor som primär ljuskälla. Utöver dessa finns även starkare växtlampor i loungen samt på flera andra platser.</p>
+      <p>(Se fliken ”Hur det ser ut hos oss”, där starka sensoriska intryck är markerade.)</p>
     </div>
   </div>
 
   <div class="accordion" onclick="toggleContent(this)">
     ✋ Hur upplevs miljön hos oss?
     <div class="content">
-      <p>Hos Magelungen stiftelse är temperaturen alltid behaglig...</p>
+      <p>Hos Magelungen stiftelse är temperaturen alltid behaglig på grund av att vi har en termostat och kan justera temperaturen efter behag.</p>
+      <p>Du kan förvänta dig material såsom golvmattor, tygsoffor, träbord med mera.</p>
+      <p>Det finns en handikapptoalett vid entrén som är markerad på ritningen (se ”Hur ser det ut här”).</p>
+      <p><strong>OBS:</strong> Dörrarna vid ingången innan hissen är automatiska.</p>
     </div>
   </div>
 
@@ -121,33 +168,15 @@
     👥 Personomsättning
     <div class="content">
       <ul>
-        <li>Under lunchtid sitter många personer...</li>
+        <li>Under lunchtid sitter många personer vid matbordet och äter tillsammans.</li>
+        <li>Övriga delar av dagen rör sig personer främst i kontorsdelen, men det kan också vara elever som går till eller från en föreläsning i andra delar av lokalen.</li>
+        <li>I loungen sitter besökare ofta i soffor eller fåtöljer, ibland med kaffe eller något att äta.</li>
+        <li>Personer rör sig mellan olika delar av lokalen, till exempel för att hämta dryck eller mat från köket.</li>
+        <li>Pauser innebär ofta att någon går från kontoret till toaletten.</li>
+        <li>Det är vanligt att personer går i korridorerna, tittar in i olika rum eller bara sträcker på benen.</li>
       </ul>
     </div>
   </div>
 
-  <script>
-    function toggleContent(el) {
-      const content = el.querySelector(".content");
-      content.style.display = (window.getComputedStyle(content).display === "block") ? "none" : "block";
-    }
-
-    function toggleMenu(event) {
-      event.stopPropagation(); // Förhindrar att klick på knappen stänger menyn direkt
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('active');
-    }
-
-    // Stäng menyn om man klickar utanför den
-    document.addEventListener('click', function (event) {
-      const menu = document.getElementById('menu');
-      const button = document.querySelector('.menu-button');
-
-      // Om man klickar utanför menyn OCH utanför menyknappen → stäng menyn
-      if (!menu.contains(event.target) && !button.contains(event.target)) {
-        menu.classList.remove('active');
-      }
-    });
-  </script>
 </body>
 </html>
