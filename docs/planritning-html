@@ -61,7 +61,7 @@
   <h1>Planritning – Magelungen</h1>
 
   <div class="image-container">
-    <img src="Magelungen/1.png" alt="Planritning med zoner" class="planritning">
+    <img src= url('https://github.com/tryggtbessoook/Tryggtbesok/tree/main/docs/Magelungen/Magelungen/1.png);alt="Planritning med zoner" class="planritning">
 
     <!-- Entré -->
     <div class="info-icon" style="top: 12%; left: 9%;">?</div>
@@ -89,7 +89,7 @@
   </div>
 
   <h2>Sensorikbild</h2>
-  <img src= url('https://github.com/tryggtbessoook/Tryggtbesok/tree/main/docs/Magelungen/);alt="Sensorisk plan" class="planritning">
+  <img src= url('https://github.com/tryggtbessoook/Tryggtbesok/tree/main/docs/Magelungen/Magelungen/2.png);alt="Sensorisk plan" class="planritning">
 
 </body>
 </html>
