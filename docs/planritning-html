@@ -1,1 +1,140 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magelungen - Interaktiv Planritning</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    .plan-container {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .plan-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hotspot {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      text-align: center;
+      line-height: 32px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+    }
+    .popup {
+      position: absolute;
+      background: #fff;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      padding: 15px;
+      width: 220px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 10;
+    }
+    .popup.visible {
+      display: block;
+    }
+    .popup .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      border: none;
+      background: none;
+      font-size: 18px;
+      color: #007BFF;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
 
+<h1 style="text-align:center;">Magelungen – Interaktiv Planritning</h1>
+
+<div class="plan-container">
+  <!-- Planritningsbild -->
+  <img src="magelungen-planritning.png" alt="Planritning Magelungen" class="plan-image" />
+
+  <!-- Frågetecken (justera top/left beroende på placering i bilden) -->
+  <div class="hotspot" style="top: 10%; left: 18%;" data-popup="popup-entre">?</div>
+  <div class="hotspot" style="top: 35%; left: 50%;" data-popup="popup-lounge">?</div>
+  <div class="hotspot" style="top: 60%; left: 40%;" data-popup="popup-kok">?</div>
+  <div class="hotspot" style="top: 80%; left: 72%;" data-popup="popup-klassrum">?</div>
+
+  <!-- Popup-beskrivningar -->
+  <div class="popup" id="popup-entre">
+    <button class="close-btn">&times;</button>
+    <strong>Entré:</strong>
+    <p>Här kommer du in i Magelungen. Här finns lugn belysning och tydliga vägvisare.</p>
+  </div>
+
+  <div class="popup" id="popup-lounge">
+    <button class="close-btn">&times;</button>
+    <strong>Lounge:</strong>
+    <p>Loungen är en trygg zon där du kan vänta eller koppla av med hjälpmedel som hörselkåpor och tyngdfiltar.</p>
+  </div>
+
+  <div class="popup" id="popup-kok">
+    <button class="close-btn">&times;</button>
+    <strong>Köket:</strong>
+    <p>I köket kan du ta något att äta i lugn miljö med ljudabsorberande möbler.</p>
+  </div>
+
+  <div class="popup" id="popup-klassrum">
+    <button class="close-btn">&times;</button>
+    <strong>Klassrummet:</strong>
+    <p>Klassrummen har nedtonad belysning, tysta zoner och möjligheter till hjälpmedel.</p>
+  </div>
+</div>
+
+<script>
+  const hotspots = document.querySelectorAll('.hotspot');
+  const popups = document.querySelectorAll('.popup');
+
+  function closeAllPopups() {
+    popups.forEach(p => p.classList.remove('visible'));
+  }
+
+  hotspots.forEach(h => {
+    h.addEventListener('click', () => {
+      const popup = document.getElementById(h.dataset.popup);
+      const isVisible = popup.classList.contains('visible');
+      closeAllPopups();
+      if (!isVisible) popup.classList.add('visible');
+    });
+  });
+
+  document.querySelectorAll('.close-btn').forEach(btn => {
+    btn.addEventListener('click', closeAllPopups);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.popup') && !e.target.classList.contains('hotspot')) {
+      closeAllPopups();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllPopups();
+  });
+</script>
+
+</body>
+</html>
