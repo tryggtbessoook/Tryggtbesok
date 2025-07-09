@@ -89,7 +89,7 @@
   </div>
 
   <h2>Sensorikbild</h2>
-  <img src= url('');alt="Sensorisk plan" class="planritning">
+  <img src= url('https://github.com/tryggtbessoook/Tryggtbesok/tree/main/docs/Magelungen/);alt="Sensorisk plan" class="planritning">
 
 </body>
 </html>
