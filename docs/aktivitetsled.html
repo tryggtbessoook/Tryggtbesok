@@ -43,7 +43,7 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 1000;
+      z-index: 999; /* lägre än menyn så menyn hamnar ovanpå */
       font-size: 60px;
       background: none;
       border: none;
@@ -52,24 +52,27 @@
     #menu {
       display: none;
       position: fixed;
-      top: 60px;
+      top: 20px;
       right: 20px;
+      width: 260px;
       background: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      padding: 10px;
-      z-index: 1000;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      padding: 20px;
+      z-index: 1001; /* högre än hamburgermenyn */
     }
     #menu a {
       display: block;
-      margin: 8px 0;
+      margin: 16px 0;
       text-decoration: none;
       color: #333;
-      font-size: 1rem;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 6px;
     }
     #menu a:hover {
-      text-decoration: underline;
+      background-color: #f0f0f0;
     }
   </style>
 </head>
@@ -97,8 +100,7 @@
 
     <h1>📝 Aktivitetsled</h1>
 
-    <a class="download-link"
-         <a href="Ga-in-genom-entre.pdf" target="_blank">      
+    <a class="download-link" href="Ga-in-genom-entre.pdf" target="_blank">
       📄 Ladda ner aktivitetsled (PDF)
     </a>
   </main>
@@ -110,6 +112,7 @@
       menu.style.display = isOpen ? 'none' : 'block';
       menu.setAttribute('aria-hidden', isOpen);
     }
+
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('menu');
       const btn = document.querySelector('.menu-button');
