@@ -48,6 +48,7 @@
       color: #fff;
       text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
+
     .menu-button {
       position: fixed;
       top: 20px;
@@ -57,9 +58,10 @@
       background: none;
       border: none;
       cursor: pointer;
+      color: #333;
     }
+
     #menu {
-      display: none;
       position: fixed;
       top: 20px;
       right: 20px;
@@ -70,7 +72,20 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       padding: 20px;
       z-index: 1001; /* högre än hamburgermenyn */
+      
+      /* Starta gömd med opacity och scale för snygg animation */
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
+
+    #menu.show {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
     #menu a {
       display: block;
       margin: 16px 0;
@@ -79,6 +94,7 @@
       font-size: 1.2rem;
       padding: 10px;
       border-radius: 6px;
+      transition: background-color 0.2s ease;
     }
     #menu a:hover {
       background-color: #f0f0f0;    
@@ -101,10 +117,10 @@
 <body>
 
   <!-- Menyknapp -->
-  <button onclick="toggleMenu()" class="menu-button">☰</button>
+  <button aria-label="Öppna/stäng meny" class="menu-button" id="menu-button">☰</button>
 
   <!-- Meny -->
-  <div id="menu">
+  <nav id="menu" aria-hidden="true">
     <a href="index.html">🏠 Hem</a>
     <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
     <a href="vagen-hit.html">🗺️ Vägen hit</a>
@@ -113,16 +129,8 @@
     <a href="bildstod.html">🧩 Bildstöd</a>
     <a href="planritning.html">📐 Planritning</a>
     <a href="om-oss.html">ℹ️ Om oss</a>
-  </div>
+  </nav>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-
-  <!-- Innehåll -->
   <h1>Välkommen till TryggtBesök</h1>
 
   <header>
@@ -140,5 +148,46 @@
     <p>&copy; 2025 TryggtBesök</p>
   </footer>
 
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
+    function toggleMenu() {
+      const isShown = menu.classList.contains('show');
+      if (isShown) {
+        menu.classList.remove('show');
+        menu.setAttribute('aria-hidden', 'true');
+      } else {
+        menu.classList.add('show');
+        menu.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    menuButton.addEventListener('click', (e) => {
+      e.stopPropagation(); // Förhindra att body-click fångas direkt
+      toggleMenu();
+    });
+
+    // Stäng menyn om man klickar utanför
+    document.body.addEventListener('click', (e) => {
+      if (menu.classList.contains('show')) {
+        // Om klicket är utanför menyn
+        if (!menu.contains(e.target) && e.target !== menuButton) {
+          menu.classList.remove('show');
+          menu.setAttribute('aria-hidden', 'true');
+        }
+      }
+    });
+
+    // Stäng menyn med Escape-tangenten
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        menu.setAttribute('aria-hidden', 'true');
+        menuButton.focus();
+      }
+    });
+  </script>
+
 </body>
-</html> 
+</html>
