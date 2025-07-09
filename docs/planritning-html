@@ -59,7 +59,7 @@
   <h1>Planritning – Magelungen</h1>
 
   <div class="image-container">
-    <img src="Magelungen/magelungen-planritning.png" alt="Planritning med zoner" class="planritning">
+    <img src="Magelungen/Magelungen1.png" alt="Planritning med zoner" class="planritning">
 
     <!-- Entré -->
     <div class="info-icon" style="top: 15%; left: 10%;">?</div>
@@ -87,7 +87,7 @@
   </div>
 
   <h2>Sensorikbild</h2>
-  <img src="Magelungen/magelungen-planritning2.png" alt="Sensorisk plan" class="planritning">
+  <img src="Magelungen/Magelungen2.png" alt="Sensorisk plan" class="planritning">
 
 </body>
 </html>
