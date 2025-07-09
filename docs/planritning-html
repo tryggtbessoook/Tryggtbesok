@@ -89,7 +89,7 @@
   </div>
 
   <h2>Sensorikbild</h2>
-  <img src="Magelungen/2.png" alt="Sensorisk plan" class="planritning">
+  <img src= url('');alt="Sensorisk plan" class="planritning">
 
 </body>
 </html>
