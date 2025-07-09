@@ -31,11 +31,11 @@
       padding: 15px 0 0 0;
       color: #333;
     }
-   .menu-button {
+    .menu-button {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 999; /* lägre än menyn så menyn hamnar ovanpå */
+      z-index: 999;
       font-size: 60px;
       background: none;
       border: none;
@@ -52,7 +52,10 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       padding: 20px;
-      z-index: 1001; /* högre än hamburgermenyn */
+      z-index: 1001;
+    }
+    #menu.show {
+      display: block;
     }
     #menu a {
       display: block;
@@ -65,17 +68,18 @@
     }
     #menu a:hover {
       background-color: #f0f0f0;
-    }  </style>
-  
+    }
+  </style>
+
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
-      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+      menu.classList.toggle('show');
     }
 
     function toggleContent(el) {
       const content = el.querySelector(".content");
-      content.style.display = (window.getComputedStyle(content).display === "block") ? "none" : "block";
+      content.style.display = (content.style.display === "block") ? "none" : "block";
     }
   </script>
 </head>
