@@ -3,34 +3,63 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Om oss – TryggtBesök</title>
+  <title>TryggtBesök</title>
+  <link rel="stylesheet" href="style.css"/>
   <style>
     body {
       font-family: sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      line-height: 1.6;
+      background-image: url('https://tryggtbessoook.github.io/Tryggtbesok/Projekt-TryggtBesok/images/image1.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #111;
     }
+
     header, footer {
       text-align: center;
-      background: #eee;
       padding: 1em;
+      background-color: rgba(255, 255, 255, 0.85);
     }
+
+    main {
+      padding: 2em;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      max-width: 800px;
+      margin: 20px auto 40px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #intro {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
     h1 {
-      margin-top: 80px;
-      font-size: 2em;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.5em;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
+
     .menu-button {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 999;
+      z-index: 998; /* ligger under menyfönstret */
       font-size: 60px;
       background: none;
       border: none;
       cursor: pointer;
     }
+
     #menu {
       display: none;
       position: fixed;
@@ -42,8 +71,9 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       padding: 20px;
-      z-index: 1001;
+      z-index: 1001; /* högre än hamburgermenyn */
     }
+
     #menu a {
       display: block;
       margin: 16px 0;
@@ -53,55 +83,32 @@
       padding: 10px;
       border-radius: 6px;
     }
+
     #menu a:hover {
       background-color: #f0f0f0;
     }
-    .section {
-      max-width: 800px;
-      margin: 1.5em auto;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .section summary {
-      padding: 1em;
-      background: #007acc;
-      color: white;
-      cursor: pointer;
-      font-size: 1.2rem;
-    }
-    .section summary:hover {
-      background: #005fa3;
-    }
-    .section p, .section ul {
-      padding: 1em;
-      margin: 0;
-    }
-    .team-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1em;
-      justify-content: center;
-      padding: 1em;
-    }
-    .team-member {
+
+    footer {
       text-align: center;
-      width: 140px;
+      padding: 2em;
+      margin-top: 60px;
+      background-color: rgba(255, 255, 255, 0.85);
     }
-    .team-member img {
-      width: 100%;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    footer p {
-      font-size: 0.9rem;
+
+    footer a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <button class="menu-button" onclick="toggleMenu()" aria-label="Meny">☰</button>
-  <nav id="menu" aria-hidden="true">
+
+  <!-- Menyknapp -->
+  <button onclick="toggleMenu()" class="menu-button">☰</button>
+
+  <!-- Meny -->
+  <div id="menu">
     <a href="index.html">🏠 Hem</a>
     <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
     <a href="vagen-hit.html">🗺️ Vägen hit</a>
@@ -110,86 +117,52 @@
     <a href="bildstod.html">🧩 Bildstöd</a>
     <a href="planritning.html">📐 Planritning</a>
     <a href="om-oss.html">ℹ️ Om oss</a>
-  </nav>
+  </div>
+
+  <!-- Innehåll -->
+  <h1>Välkommen till TryggtBesök</h1>
 
   <header>
-    <h1>Om oss</h1>
+    <p>Vi hjälper dig förbereda och förstå din omgivning inför ditt besök.</p>
   </header>
 
   <main>
-    <details class="section">
-      <summary>👤 Intro</summary>
-      <p>TryggtBesök är en tjänst som hjälper personer med NPF (neuropsykiatriska funktionsnedsättningar) att förbereda sig inför besök i offentliga och kommersiella miljöer. Med hjälp av visuella guider, bildstöd, kartor och tydlig information blir besöket tryggare och mer förutsägbart.</p>
-    </details>
-
-    <details class="section">
-      <summary>📖 Historia</summary>
-      <p>Det hela började när jag, William upptäckte en lucka i dagens samhälle, i de miljöer där vi främst vistas. Jag hade ingen direkt erfarenhet av NPF, men började intensivt studera ämnet och insåg att det uppdrag jag har tagit på mig var alldeles för stort att göra själv. Jag hörde av mig till en av mina bästa kompisar sedan barndomen, Noah Beyeler. Tillsammans har vi byggt det fundament, den grund som vi idag stolt kan kalla TryggtBesök. Vi insåg att det saknades enkla verktyg för förberedelser och detta ville vi ändra på. Vi var 17 år gamla när vi grundade TryggtBesök, med en tydlig målsättning: Att använda digitala verktyg för att sprida trygghet, tillgänglighet och förståelse.</p>
-    </details>
-
-    <details class="section">
-      <summary>🌍 Vision &amp; Uppdrag</summary>
-      <p><strong>Vision:</strong> Ett samhälle där alla, oavsett förutsättningar, känner sig trygga att delta i vardagslivet.</p>
-      <p><strong>Uppdrag:</strong> Att göra offentliga miljöer förutsägbara och anpassade genom att erbjuda visuellt och praktiskt stöd för personer med NPF. Vi tror på medmänsklighet, samhällsnytta och en mänsklighet där olikhet ses som en tillgång.</p>
-    </details>
-
-    <details class="section">
-      <summary>🧑‍🤝‍🧑 Team</summary>
-      <div class="team-container">
-        <div class="team-member">
-          <img src="bilder/william.jpg" alt="William Robertsson">
-          <p>William Robertsson</p>
-        </div>
-        <div class="team-member">
-          <img src="bilder/noah.jpg" alt="Noah Beyeler">
-          <p>Noah Beyeler</p>
-        </div>
-      </div>
-    </details>
-
-    <details class="section">
-      <summary>💡 Värderingar</summary>
-      <ul>
-        <li><strong>Inkludering:</strong> Alla ska känna sig välkomna, lyssnade på och respekterade.</li>
-        <li><strong>Empati:</strong> Vi lyssnar till och förstår andras behov</li>
-        <li><strong>Neurodiversitet:</strong> Olika hjärnor är en tillgång, inte ett hinder.</li>
-        <li><strong>Medmänsklighet:</strong> Vi tror på värme, närhet och ärlighet i möten.</li>
-        <li><strong>Samhällsnytta:</strong> Det vi bygger ska göra skillnad för fler än oss själva.</li>
-      </ul>
-    </details>
-
-    <details class="section">
-      <summary>🏛️ Samhällsansvar (CSR)</summary>
-      <p>Vi arbetar för att tillgänglighet inte ska vara ett undantag utan en självklar del av hur lokaler och tjänster planeras. Genom att skapa förberedande material bidrar vi till:</p>
-      <ul>
-        <li>Färre avbrutna besök på grund av sensorisk stress</li>
-        <li>Ökad självständighet för personer med NPF</li>
-        <li>Ett samhälle där fler kan delta på sina egna villkor</li>
-      </ul>
-    </details>
-
-    <details class="section">
-      <summary>✉️ Kontakt</summary>
-      <p>Har du frågor eller förslag? Hör gärna av dig:</p>
-      <p>
-        <a href="mailto:williamrobertsson76@gmail.com">williamrobertsson76@gmail.com</a><br>
-        <a href="mailto:noahbeyeler@icloud.com">noahbeyeler@icloud.com</a>
-      </p>
-    </details>
+    <section id="intro">
+      <p>Vi har tagit fram förberedande material för att underlätta ert besök hos Magelungens huvudkontor så pass mycket som möjligt. Vi förstår vikten av ett lugnt, förberett och förutsägbart besök. Vårt stöd kan brett användas av vem som helst, men vi riktar oss främst till personer med NPF-diagnoser och större behov. Vårt syfte är att göra alla besök tryggare för att främja mänsklig variation och inkludering i samhället. Alla har rätt till ett Tryggt besök.</p>
+      <p>Klicka på menyn uppe till höger för att navigera runt till olika flikar och ta del av materialet.</p>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 TryggtBesök. All rights reserved.</p>
-    <p>Alla har rätt till ett TryggtBesök.</p>
+    <p>&copy; 2025 TryggtBesök</p>
   </footer>
 
+  <!-- JavaScript för att öppna/stänga meny -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       const isOpen = menu.style.display === 'block';
       menu.style.display = isOpen ? 'none' : 'block';
-      menu.setAttribute('aria-hidden', isOpen);
     }
+
+    // Klick utanför menyn stänger den
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      const button = document.querySelector('.menu-button');
+      if (menu.style.display === 'block' &&
+          !menu.contains(event.target) &&
+          !button.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    });
+
+    // Klick på meny-länk stänger menyn
+    document.querySelectorAll('#menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('menu').style.display = 'none';
+      });
+    });
   </script>
+
 </body>
 </html>
