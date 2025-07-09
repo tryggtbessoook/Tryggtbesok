@@ -97,10 +97,21 @@
     footer p {
       font-size: 0.9rem;
     }
+    /* Overlay to detect clicks outside menu */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: transparent;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
   <button class="menu-button" onclick="toggleMenu()" aria-label="Meny">☰</button>
+  
+  <div id="overlay" onclick="closeMenu()"></div>
+  
   <nav id="menu" aria-hidden="true">
     <a href="index.html">🏠 Hem</a>
     <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
@@ -186,9 +197,24 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
+      const overlay = document.getElementById('overlay');
       const isOpen = menu.style.display === 'block';
-      menu.style.display = isOpen ? 'none' : 'block';
-      menu.setAttribute('aria-hidden', isOpen);
+      if (isOpen) {
+        menu.style.display = 'none';
+        overlay.style.display = 'none';
+        menu.setAttribute('aria-hidden', 'true');
+      } else {
+        menu.style.display = 'block';
+        overlay.style.display = 'block';
+        menu.setAttribute('aria-hidden', 'false');
+      }
+    }
+    function closeMenu() {
+      const menu = document.getElementById('menu');
+      const overlay = document.getElementById('overlay');
+      menu.style.display = 'none';
+      overlay.style.display = 'none';
+      menu.setAttribute('aria-hidden', 'true');
     }
   </script>
 </body>
