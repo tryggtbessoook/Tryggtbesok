@@ -10,10 +10,14 @@
       background-color: #f7f7f7;
     }
 
+    h1, h2 {
+      text-align: center;
+    }
+
     .image-container {
       position: relative;
       max-width: 100%;
-      margin-bottom: 50px;
+      margin: 0 auto 50px auto;
     }
 
     .planritning {
@@ -36,23 +40,20 @@
       line-height: 24px;
       cursor: pointer;
       font-size: 16px;
+      z-index: 5;
     }
 
     .tooltip {
       position: absolute;
       background-color: white;
       color: #333;
-      padding: 8px;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      width: 200px;
+      width: 220px;
       display: none;
       z-index: 10;
-    }
-
-    .info-icon:hover + .tooltip,
-    .info-icon:focus + .tooltip {
-      display: block;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -61,35 +62,59 @@
   <h1>Planritning – Magelungen</h1>
 
   <div class="image-container">
-    <img src= url('https://github.com/tryggtbessoook/Tryggtbesok/tree/main/docs/Magelungen/Magelungen/1.png);alt="Planritning med zoner" class="planritning">
+    <!-- Planritning -->
+    <img src="https://raw.githubusercontent.com/tryggtbessoook/Tryggtbesok/main/docs/Magelungen/1.png" alt="Planritning med zoner" class="planritning">
 
     <!-- Entré -->
     <div class="info-icon" style="top: 12%; left: 9%;">?</div>
     <div class="tooltip" style="top: 16%; left: 9%;">
-      Här kommer du in – Entrén. Ljud, ljus och många intryck kan förekomma här.
+      <strong>Entré:</strong><br>Här kommer du in. Ljud, ljus och många intryck kan förekomma här.
     </div>
 
     <!-- Lounge -->
     <div class="info-icon" style="top: 29%; left: 36%;">?</div>
     <div class="tooltip" style="top: 33%; left: 36%;">
-      Loungeområde – plats för att vänta, varva ner och anpassa sig.
+      <strong>Lounge:</strong><br>Plats för att vänta, varva ner och anpassa sig.
     </div>
 
     <!-- Kök -->
     <div class="info-icon" style="top: 50%; left: 63%;">?</div>
     <div class="tooltip" style="top: 54%; left: 63%;">
-      Här är köket. Doft av mat och sorl kan förekomma.
+      <strong>Kök:</strong><br>Här är köket. Doft av mat och sorl kan förekomma.
     </div>
 
     <!-- Klassrum -->
     <div class="info-icon" style="top: 69%; left: 39%;">?</div>
     <div class="tooltip" style="top: 73%; left: 39%;">
-      Klassrummet – lugn zon för koncentration och instruktioner.
+      <strong>Klassrum:</strong><br>Lugn zon för koncentration och instruktioner.
     </div>
   </div>
 
-  <h2>Sensorikbild</h2>
-  <img src= url('https://github.com/tryggtbessoook/Tryggtbesok/tree/main/docs/Magelungen/Magelungen/2.png);alt="Sensorisk plan" class="planritning">
+  <h2>Sensorisk översikt</h2>
+
+  <div class="image-container">
+    <img src="https://raw.githubusercontent.com/tryggtbessoook/Tryggtbesok/main/docs/Magelungen/2.png" alt="Sensorisk plan" class="planritning">
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const tooltips = document.querySelectorAll(".tooltip");
+      const icons = document.querySelectorAll(".info-icon");
+
+      icons.forEach((icon, index) => {
+        icon.addEventListener("click", function (e) {
+          e.stopPropagation();
+          tooltips.forEach((tip, i) => {
+            tip.style.display = (i === index) ? "block" : "none";
+          });
+        });
+      });
+
+      document.addEventListener("click", function () {
+        tooltips.forEach(tip => tip.style.display = "none");
+      });
+    });
+  </script>
 
 </body>
 </html>
