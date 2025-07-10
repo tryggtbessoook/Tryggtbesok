@@ -3,50 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Planritning – Magelungen</title>
-  <style>      }
-    .menu-button {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 999;
-      font-size: 60px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    .menu-button.hide {
-      display: none;
-    }
-    #menu {
-      display: none;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 260px;
-      background: white;
-      border: 2px solid #ccc;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      padding: 20px;
-      z-index: 1001;
-    }
-    #menu.active {
-      display: block;
-    }
-    #menu a {
-      display: block;
-      margin: 16px 0;
-      text-decoration: none;
-      color: #333;
-      font-size: 1.2rem;
-      padding: 10px;
-      border-radius: 6px;
-    }
-    #menu a:hover {
-      background-color: #f0f0f0;
-    }
-  </style>  
-   <button     {
+  <style>
+    body {
       font-family: sans-serif;
       margin: 2rem;
       background-color: #f7f7f7;
@@ -72,16 +30,16 @@
 
     .info-icon {
       position: absolute;
-      width: 24px;
-      height: 24px;
+      width: 36px;
+      height: 36px;
       background-color: #007bff;
       color: white;
       font-weight: bold;
       border-radius: 50%;
       text-align: center;
-      line-height: 24px;
+      line-height: 36px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 20px;
       z-index: 5;
     }
 
@@ -97,65 +55,109 @@
       z-index: 10;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
+
+    /* Menyknapp och menyfönster */
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      font-size: 60px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-button.hide {
+      display: none;
+    }
+
+    #menu {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 260px;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      padding: 20px;
+      z-index: 1001;
+    }
+
+    #menu.active {
+      display: block;
+    }
+
+    #menu a {
+      display: block;
+      margin: 16px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    #menu a:hover {
+      background-color: #f0f0f0;
+    }
   </style>
 </head>
+<body>
+
   <!-- Menyknapp -->
-  <button class="menu-button" onclick="toggleMenu(event)">☰</button>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
 
-  <!-- Meny -->
-  <nav id="menu">
-    <a href="index.html">🏠 Hem</a>
-    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
-    <a href="vagen-hit.html">🗺️ Vägen hit</a>
-    <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
-    <a href="aktivitetsled.html">📝 Aktivitetsled</a>
-    <a href="bildstod.html">🧩 Bildstöd</a>
-    <a href="planritning.html">📐 Planritning</a>
-    <a href="om-oss.html">ℹ️ Om oss</a>
-  </nav>
-    <!-- Menyknapp -->
-  <button class="menu-button" onclick="toggleMenu(event)">☰</button>
+  <!-- Menyfönster -->
+  <div id="menu">
+    <a href="#">Planritning</a>
+    <a href="#">Sensorisk översikt</a>
+    <a href="#">Bildstöd</a>
+    <a href="https://magelungen.com" target="_blank">Butikens hemsida</a>
+    <a href="https://tryggtbesok.se">Tillbaka till startsidan</a>
+  </div>
 
-  <!-- Meny -->
-  <nav id="menu">
-    <a href="index.html">🏠 Hem</a>
-    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
-    <a href="vagen-hit.html">🗺️ Vägen hit</a>
-    <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
-    <a href="aktivitetsled.html">📝 Aktivitetsled</a>
-    <a href="bildstod.html">🧩 Bildstöd</a>
-    <a href="planritning.html">📐 Planritning</a>
-    <a href="om-oss.html">ℹ️ Om oss</a>
-  </nav>
-  
   <h1>Planritning – Magelungen</h1>
 
   <div class="image-container">
-    <!-- Planritning -->
     <img src="https://raw.githubusercontent.com/tryggtbessoook/Tryggtbesok/main/docs/Magelungen/1.png" alt="Planritning med zoner" class="planritning">
 
     <!-- Entré -->
     <div class="info-icon" style="top: 12%; left: 9%;">?</div>
     <div class="tooltip" style="top: 16%; left: 9%;">
-      <strong>Entré:</strong><br>Här kommer du in. Ljud, ljus och många intryck kan förekomma här.
+      <strong>Entrén:</strong><br>Här är ingången.
     </div>
 
     <!-- Lounge -->
     <div class="info-icon" style="top: 29%; left: 36%;">?</div>
     <div class="tooltip" style="top: 33%; left: 36%;">
-      <strong>Lounge:</strong><br>Plats för att vänta, varva ner och anpassa sig.
+      <strong>Lounge:</strong><br>Här sitter du och tar det lugnt.
+    </div>
+
+    <!-- Lugn avdelning -->
+    <div class="info-icon" style="top: 69%; left: 39%;">?</div>
+    <div class="tooltip" style="top: 73%; left: 39%;">
+      <strong>Lugn avdelning:</strong><br>Här kan du koppla av i tystnad.
     </div>
 
     <!-- Kök -->
     <div class="info-icon" style="top: 50%; left: 63%;">?</div>
     <div class="tooltip" style="top: 54%; left: 63%;">
-      <strong>Kök:</strong><br>Här är köket. Doft av mat och sorl kan förekomma.
+      <strong>Kök:</strong><br>Här finns kaffe, vatten och någonting litet att äta.
     </div>
 
-    <!-- Klassrum -->
-    <div class="info-icon" style="top: 69%; left: 39%;">?</div>
-    <div class="tooltip" style="top: 73%; left: 39%;">
-      <strong>Klassrum:</strong><br>Lugn zon för koncentration och instruktioner.
+    <!-- Matbord -->
+    <div class="info-icon" style="top: 56%; left: 76%;">?</div>
+    <div class="tooltip" style="top: 60%; left: 76%;">
+      <strong>Matbord:</strong><br>Här kan du sitta och äta.
+    </div>
+
+    <!-- Föreläsningssal -->
+    <div class="info-icon" style="top: 84%; left: 22%;">?</div>
+    <div class="tooltip" style="top: 88%; left: 22%;">
+      <strong>Föreläsningssal:</strong><br>Här hålls föreläsningarna.
     </div>
   </div>
 
@@ -166,6 +168,13 @@
   </div>
 
   <script>
+    // Menyfunktion
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+
+    // Tooltipfunktion
     document.addEventListener("DOMContentLoaded", function () {
       const tooltips = document.querySelectorAll(".tooltip");
       const icons = document.querySelectorAll(".info-icon");
