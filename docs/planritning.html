@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Planritning – Magelungen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: sans-serif;
@@ -31,16 +31,16 @@
 
     .info-icon {
       position: absolute;
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
       background-color: #007bff;
       color: white;
       font-weight: bold;
       border-radius: 50%;
       text-align: center;
-      line-height: 52px;
+      line-height: 44px;
       cursor: pointer;
-      font-size: 28px;
+      font-size: 22px;
       z-index: 5;
     }
 
@@ -48,13 +48,12 @@
       position: absolute;
       background-color: white;
       color: #333;
-      padding: 12px;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      width: 240px;
+      width: 220px;
       display: none;
       z-index: 10;
-      font-size: 1.1rem;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
@@ -107,16 +106,34 @@
       z-index: 1000;
     }
 
+    /* MOBILANPASSNING */
     @media (max-width: 600px) {
       .info-icon {
-        width: 64px;
-        height: 64px;
-        font-size: 32px;
-        line-height: 64px;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        line-height: 36px;
       }
+
       .tooltip {
-        width: 90%;
-        font-size: 1.2rem;
+        font-size: 0.9rem;
+        width: 85%;
+        padding: 8px;
+      }
+
+      #menu {
+        width: 85%;
+        padding: 12px;
+        right: 16px;
+      }
+
+      #menu a {
+        font-size: 1rem;
+        margin: 12px 0;
+      }
+
+      .menu-button {
+        font-size: 48px;
       }
     }
   </style>
@@ -144,39 +161,39 @@
     <img src="https://raw.githubusercontent.com/tryggtbessoook/Tryggtbesok/main/docs/Magelungen/1.png" alt="Planritning med zoner" class="planritning">
 
     <!-- Entré -->
-    <div class="info-icon" style="top: 43%; left: 9%;">?</div>
-    <div class="tooltip" style="top: 47%; left: 9%;">
-      <strong>Entré:</strong><br>Här kommer du in – huvudingång.
-    </div>
-
-    <!-- Matbord -->
-    <div class="info-icon" style="top: 47.5%; left: 40.5%;">?</div>
-    <div class="tooltip" style="top: 51.5%; left: 40.5%;">
-      <strong>Matbord:</strong><br>Här kan du sitta och äta.
+    <div class="info-icon" style="top: 8%; left: 5%;">?</div>
+    <div class="tooltip" style="top: 12%; left: 5%;">
+      <strong>Entrén:</strong><br>Här är ingången.
     </div>
 
     <!-- Lounge -->
-    <div class="info-icon" style="top: 24.5%; left: 48.5%;">?</div>
-    <div class="tooltip" style="top: 28.5%; left: 48.5%;">
+    <div class="info-icon" style="top: 28%; left: 39%;">?</div>
+    <div class="tooltip" style="top: 32%; left: 39%;">
       <strong>Lounge:</strong><br>Här sitter du och tar det lugnt.
     </div>
 
-    <!-- Föreläsningssal -->
-    <div class="info-icon" style="top: 15%; left: 75%;">?</div>
-    <div class="tooltip" style="top: 19%; left: 75%;">
-      <strong>Föreläsningssal:</strong><br>Här hålls föreläsningar och presentationer.
+    <!-- Lugn avdelning -->
+    <div class="info-icon" style="top: 74%; left: 51%;">?</div>
+    <div class="tooltip" style="top: 78%; left: 51%;">
+      <strong>Lugn avdelning:</strong><br>Här kan du koppla av i tystnad.
     </div>
 
     <!-- Kök -->
-    <div class="info-icon" style="top: 47%; left: 59.5%;">?</div>
-    <div class="tooltip" style="top: 51%; left: 59.5%;">
-      <strong>Kök:</strong><br>Här finns kaffe, vatten och något litet att äta.
+    <div class="info-icon" style="top: 50%; left: 61%;">?</div>
+    <div class="tooltip" style="top: 54%; left: 61%;">
+      <strong>Kök:</strong><br>Här finns kaffe, vatten och någonting litet att äta.
     </div>
 
-    <!-- Lugn avdelning -->
-    <div class="info-icon" style="top: 62%; left: 75.5%;">?</div>
-    <div class="tooltip" style="top: 66%; left: 75.5%;">
-      <strong>Lugn avdelning:</strong><br>Här kan du koppla av i tystnad.
+    <!-- Matbord -->
+    <div class="info-icon" style="top: 55%; left: 68%;">?</div>
+    <div class="tooltip" style="top: 59%; left: 68%;">
+      <strong>Matbord:</strong><br>Här kan du sitta och äta.
+    </div>
+
+    <!-- Föreläsningssal -->
+    <div class="info-icon" style="top: 64%; left: 28%;">?</div>
+    <div class="tooltip" style="top: 68%; left: 28%;">
+      <strong>Föreläsningssal:</strong><br>Här hålls föreläsningarna.
     </div>
   </div>
 
