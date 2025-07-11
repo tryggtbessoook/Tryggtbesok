@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Planritning – Magelungen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: sans-serif;
@@ -30,36 +31,31 @@
 
     .info-icon {
       position: absolute;
-      width: 60px;
-      height: 60px;
+      width: 52px;
+      height: 52px;
       background-color: #007bff;
       color: white;
       font-weight: bold;
       border-radius: 50%;
       text-align: center;
-      line-height: 60px;
+      line-height: 52px;
       cursor: pointer;
-      font-size: 30px;
+      font-size: 28px;
       z-index: 5;
-      transition: transform 0.2s ease;
-    }
-
-    .info-icon:hover {
-      transform: scale(1.1);
     }
 
     .tooltip {
       position: absolute;
       background-color: white;
       color: #333;
-      padding: 14px;
+      padding: 12px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      width: 260px;
+      width: 240px;
       display: none;
       z-index: 10;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       font-size: 1.1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
     .menu-button {
@@ -113,16 +109,14 @@
 
     @media (max-width: 600px) {
       .info-icon {
-        width: 80px;
-        height: 80px;
-        line-height: 80px;
-        font-size: 38px;
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+        line-height: 64px;
       }
-
       .tooltip {
-        font-size: 1.3rem;
         width: 90%;
-        padding: 18px;
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -150,38 +144,38 @@
     <img src="https://raw.githubusercontent.com/tryggtbessoook/Tryggtbesok/main/docs/Magelungen/1.png" alt="Planritning med zoner" class="planritning">
 
     <!-- Entré -->
-    <div class="info-icon" style="top: 45%; left: 5%;">?</div>
-    <div class="tooltip" style="top: 49%; left: 5%;">
-      <strong>Entré:</strong><br>Här är ingången.
+    <div class="info-icon" style="top: 43%; left: 9%;">?</div>
+    <div class="tooltip" style="top: 47%; left: 9%;">
+      <strong>Entré:</strong><br>Här kommer du in – huvudingång.
+    </div>
+
+    <!-- Matbord -->
+    <div class="info-icon" style="top: 47.5%; left: 40.5%;">?</div>
+    <div class="tooltip" style="top: 51.5%; left: 40.5%;">
+      <strong>Matbord:</strong><br>Här kan du sitta och äta.
     </div>
 
     <!-- Lounge -->
-    <div class="info-icon" style="top: 24%; left: 50%;">?</div>
-    <div class="tooltip" style="top: 28%; left: 50%;">
+    <div class="info-icon" style="top: 24.5%; left: 48.5%;">?</div>
+    <div class="tooltip" style="top: 28.5%; left: 48.5%;">
       <strong>Lounge:</strong><br>Här sitter du och tar det lugnt.
     </div>
 
     <!-- Föreläsningssal -->
-    <div class="info-icon" style="top: 26%; left: 75%;">?</div>
-    <div class="tooltip" style="top: 30%; left: 75%;">
-      <strong>Föreläsningssal:</strong><br>Här hålls föreläsningarna.
+    <div class="info-icon" style="top: 15%; left: 75%;">?</div>
+    <div class="tooltip" style="top: 19%; left: 75%;">
+      <strong>Föreläsningssal:</strong><br>Här hålls föreläsningar och presentationer.
     </div>
 
     <!-- Kök -->
-    <div class="info-icon" style="top: 50%; left: 58%;">?</div>
-    <div class="tooltip" style="top: 54%; left: 58%;">
-      <strong>Kök:</strong><br>Här finns kaffe, vatten och någonting litet att äta.
-    </div>
-
-    <!-- Matbord -->
-    <div class="info-icon" style="top: 54%; left: 43%;">?</div>
-    <div class="tooltip" style="top: 58%; left: 43%;">
-      <strong>Matbord:</strong><br>Här kan du sitta och äta.
+    <div class="info-icon" style="top: 47%; left: 59.5%;">?</div>
+    <div class="tooltip" style="top: 51%; left: 59.5%;">
+      <strong>Kök:</strong><br>Här finns kaffe, vatten och något litet att äta.
     </div>
 
     <!-- Lugn avdelning -->
-    <div class="info-icon" style="top: 70%; left: 72%;">?</div>
-    <div class="tooltip" style="top: 74%; left: 72%;">
+    <div class="info-icon" style="top: 62%; left: 75.5%;">?</div>
+    <div class="tooltip" style="top: 66%; left: 75.5%;">
       <strong>Lugn avdelning:</strong><br>Här kan du koppla av i tystnad.
     </div>
   </div>
