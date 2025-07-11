@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Planritning – Magelungen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
@@ -66,7 +66,6 @@
       background: none;
       border: none;
       cursor: pointer;
-      color: black; /* ← svart menyikon */
     }
 
     #menu {
@@ -126,7 +125,6 @@
         width: 85%;
         padding: 12px;
         right: 16px;
-        background: white;
       }
 
       #menu a {
@@ -135,8 +133,7 @@
       }
 
       .menu-button {
-        font-size: 60px;
-        color: black; /* ← svart menyikon på mobil */
+        font-size: 48px;
       }
     }
   </style>
@@ -145,7 +142,7 @@
 
   <div id="overlay" onclick="closeMenu()"></div>
 
-  <button class="menu-button" onclick="toggleMenu()" aria-label="Meny">☰</button>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
 
   <nav id="menu" aria-hidden="true">
     <a href="index.html">🏠 Hem</a>
@@ -215,18 +212,15 @@
       if (isOpen) {
         menu.style.display = "none";
         overlay.style.display = "none";
-        menu.setAttribute("aria-hidden", "true");
       } else {
         menu.style.display = "block";
         overlay.style.display = "block";
-        menu.setAttribute("aria-hidden", "false");
       }
     }
 
     function closeMenu() {
       document.getElementById("menu").style.display = "none";
       document.getElementById("overlay").style.display = "none";
-      document.getElementById("menu").setAttribute("aria-hidden", "true");
     }
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -247,5 +241,6 @@
       });
     });
   </script>
+
 </body>
 </html>
