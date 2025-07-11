@@ -57,15 +57,31 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
+    /* Hamburgerknapp (3 SVARTA streck) */
     .menu-button {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 1002;
-      font-size: 60px;
+      width: 50px;
+      height: 50px;
       background: none;
       border: none;
+      z-index: 1002;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+
+    .menu-button span {
+      display: block;
+      width: 30px;
+      height: 4px;
+      background-color: black;
+      margin: 4px 0;
+      border-radius: 2px;
     }
 
     #menu {
@@ -74,7 +90,7 @@
       top: 20px;
       right: 20px;
       width: 260px;
-      background: white;
+      background: #000;
       border: 2px solid #ccc;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -86,14 +102,14 @@
       display: block;
       margin: 16px 0;
       text-decoration: none;
-      color: #333;
+      color: white;
       font-size: 1.2rem;
       padding: 10px;
       border-radius: 6px;
     }
 
     #menu a:hover {
-      background-color: #f0f0f0;
+      background-color: #333;
     }
 
     #overlay {
@@ -106,7 +122,6 @@
       z-index: 1000;
     }
 
-    /* MOBILANPASSNING */
     @media (max-width: 600px) {
       .info-icon {
         width: 36px;
@@ -122,18 +137,30 @@
       }
 
       #menu {
-        width: 85%;
-        padding: 12px;
-        right: 16px;
+        width: 260px;
+        padding: 20px;
+        background: #000;
+        border: 2px solid #ccc;
+        right: 20px;
+        top: 20px;
       }
 
       #menu a {
-        font-size: 1rem;
-        margin: 12px 0;
+        font-size: 1.2rem;
+        margin: 16px 0;
+        color: white;
       }
 
       .menu-button {
-        font-size: 48px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .menu-button span {
+        width: 30px;
+        height: 4px;
+        margin: 4px 0;
+        background-color: black;
       }
     }
   </style>
@@ -142,7 +169,11 @@
 
   <div id="overlay" onclick="closeMenu()"></div>
 
-  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <button class="menu-button" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
   <nav id="menu" aria-hidden="true">
     <a href="index.html">🏠 Hem</a>
@@ -212,15 +243,18 @@
       if (isOpen) {
         menu.style.display = "none";
         overlay.style.display = "none";
+        menu.setAttribute("aria-hidden", "true");
       } else {
         menu.style.display = "block";
         overlay.style.display = "block";
+        menu.setAttribute("aria-hidden", "false");
       }
     }
 
     function closeMenu() {
       document.getElementById("menu").style.display = "none";
       document.getElementById("overlay").style.display = "none";
+      document.getElementById("menu").setAttribute("aria-hidden", "true");
     }
 
     document.addEventListener("DOMContentLoaded", function () {
