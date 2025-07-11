@@ -62,10 +62,23 @@
       top: 20px;
       right: 20px;
       z-index: 1002;
-      font-size: 60px;
       background: none;
       border: none;
       cursor: pointer;
+      width: 40px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+    }
+
+    .menu-button span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background-color: black;
+      border-radius: 2px;
     }
 
     #menu {
@@ -133,7 +146,13 @@
       }
 
       .menu-button {
-        font-size: 48px;
+        width: 36px;
+        height: 28px;
+      }
+
+      .menu-button span {
+        height: 4px;
+        background-color: black;
       }
     }
   </style>
@@ -142,7 +161,11 @@
 
   <div id="overlay" onclick="closeMenu()"></div>
 
-  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <button class="menu-button" id="menuToggle" onclick="toggleMenu()" aria-label="Öppna meny">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
   <nav id="menu" aria-hidden="true">
     <a href="index.html">🏠 Hem</a>
@@ -160,37 +183,31 @@
   <div class="image-container">
     <img src="https://raw.githubusercontent.com/tryggtbessoook/Tryggtbesok/main/docs/Magelungen/1.png" alt="Planritning med zoner" class="planritning">
 
-    <!-- Entré -->
     <div class="info-icon" style="top: 6%; left: 5%;">?</div>
     <div class="tooltip" style="top: 10%; left: 5%;">
       <strong>Entrén:</strong><br>Här är ingången.
     </div>
 
-    <!-- Lounge -->
     <div class="info-icon" style="top: 25%; left: 39%;">?</div>
     <div class="tooltip" style="top: 28%; left: 39%;">
       <strong>Lounge:</strong><br>Här sitter du och tar det lugnt.
     </div>
 
-    <!-- Lugn avdelning -->
     <div class="info-icon" style="top: 76%; left: 53%;">?</div>
     <div class="tooltip" style="top: 80%; left: 53%;">
       <strong>Lugn avdelning:</strong><br>Här kan du koppla av i tystnad.
     </div>
 
-    <!-- Kök -->
     <div class="info-icon" style="top: 50%; left: 61%;">?</div>
     <div class="tooltip" style="top: 54%; left: 61%;">
       <strong>Kök:</strong><br>Här finns kaffe, vatten och någonting litet att äta.
     </div>
 
-    <!-- Matbord -->
     <div class="info-icon" style="top: 55%; left: 65%;">?</div>
     <div class="tooltip" style="top: 59%; left: 65%;">
       <strong>Matbord:</strong><br>Här kan du sitta och äta.
     </div>
 
-    <!-- Föreläsningssal -->
     <div class="info-icon" style="top: 64%; left: 35%;">?</div>
     <div class="tooltip" style="top: 68%; left: 35%;">
       <strong>Föreläsningssal:</strong><br>Här hålls föreläsningarna.
@@ -207,20 +224,24 @@
     function toggleMenu() {
       const menu = document.getElementById("menu");
       const overlay = document.getElementById("overlay");
+      const button = document.getElementById("menuToggle");
       const isOpen = menu.style.display === "block";
 
       if (isOpen) {
         menu.style.display = "none";
         overlay.style.display = "none";
+        button.style.display = "flex";
       } else {
         menu.style.display = "block";
         overlay.style.display = "block";
+        button.style.display = "none";
       }
     }
 
     function closeMenu() {
       document.getElementById("menu").style.display = "none";
       document.getElementById("overlay").style.display = "none";
+      document.getElementById("menuToggle").style.display = "flex";
     }
 
     document.addEventListener("DOMContentLoaded", function () {
