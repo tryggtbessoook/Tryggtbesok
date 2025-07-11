@@ -33,15 +33,17 @@
       font-size: 1.1em;
       color: #007acc;
       text-decoration: none;
+      display: block;
+      margin-bottom: 1em;
     }
     a.download:hover {
       text-decoration: underline;
     }
-   .menu-button {
+    .menu-button {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 999; /* lägre än menyn så menyn hamnar ovanpå */
+      z-index: 999;
       font-size: 60px;
       background: none;
       border: none;
@@ -58,7 +60,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       padding: 20px;
-      z-index: 1001; /* högre än hamburgermenyn */
+      z-index: 1001;
     }
     #menu a {
       display: block;
@@ -79,7 +81,7 @@
   <!-- Menyknapp -->
   <button class="menu-button" onclick="toggleMenu()" aria-label="Öppna meny">☰</button>
 
-  <!-- Meny som döljs/visas -->
+  <!-- Meny -->
   <nav id="menu" aria-hidden="true">
     <a href="index.html">🏠 Hem</a>
     <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
@@ -91,16 +93,17 @@
     <a href="om-oss.html">ℹ️ Om oss</a>
   </nav>
 
-  <!-- Innehåll -->
   <main>
-    <!-- ✅ Ny text högst upp -->
     <p class="intro-text">
       Här har vi tagit fram ett alternativt sätt att kommunicera, via bilder. Bildstödet syftar till att underlätta kommunikation genom alternativt sätt att kommunicera, men också för att få sig en bild av personer, föremål och aktiviteter i lokalen. Bilstödets nedladdningsbara funktion gör det möjligt att klippa ut de bilder du själv vill ha med dig till platsen.
     </p>
 
     <h1>🧩 Bildstöd</h1>
-    <p>Här kan du ladda ner bildstöd som PDF:</p>
-    <a class="download" href="bildstod.pdf" download>📄 Ladda ner bildstöd (PDF)</a>
+    <p>Ladda ner de olika PDF:erna här:</p>
+
+    <a class="download" href="bildstöd 0.pdf" download>📄 Bildstöd 0 (PDF)</a>
+    <a class="download" href="bildstöd 1.pdf" download>📄 Bildstöd 1 (PDF)</a>
+    <a class="download" href="bildstöd 2.pdf" download>📄 Bildstöd 2 (PDF)</a>
   </main>
 
   <script>
@@ -111,7 +114,6 @@
       menu.setAttribute('aria-hidden', isOpen);
     }
 
-    // Stäng menyn om användaren klickar utanför
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('menu');
       const btn = document.querySelector('.menu-button');
