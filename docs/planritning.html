@@ -30,30 +30,36 @@
 
     .info-icon {
       position: absolute;
-      width: 44px;
-      height: 44px;
+      width: 60px;
+      height: 60px;
       background-color: #007bff;
       color: white;
       font-weight: bold;
       border-radius: 50%;
       text-align: center;
-      line-height: 44px;
+      line-height: 60px;
       cursor: pointer;
-      font-size: 22px;
+      font-size: 30px;
       z-index: 5;
+      transition: transform 0.2s ease;
+    }
+
+    .info-icon:hover {
+      transform: scale(1.1);
     }
 
     .tooltip {
       position: absolute;
       background-color: white;
       color: #333;
-      padding: 10px;
+      padding: 14px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      width: 220px;
+      width: 260px;
       display: none;
       z-index: 10;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      font-size: 1.1rem;
     }
 
     .menu-button {
@@ -104,6 +110,21 @@
       height: 100vh;
       z-index: 1000;
     }
+
+    @media (max-width: 600px) {
+      .info-icon {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 38px;
+      }
+
+      .tooltip {
+        font-size: 1.3rem;
+        width: 90%;
+        padding: 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -129,39 +150,39 @@
     <img src="https://raw.githubusercontent.com/tryggtbessoook/Tryggtbesok/main/docs/Magelungen/1.png" alt="Planritning med zoner" class="planritning">
 
     <!-- Entré -->
-    <div class="info-icon" style="top: 10%; left: 8%;">?</div>
-    <div class="tooltip" style="top: 14%; left: 8%;">
-      <strong>Entrén:</strong><br>Här är ingången.
+    <div class="info-icon" style="top: 45%; left: 5%;">?</div>
+    <div class="tooltip" style="top: 49%; left: 5%;">
+      <strong>Entré:</strong><br>Här är ingången.
     </div>
 
     <!-- Lounge -->
-    <div class="info-icon" style="top: 26%; left: 38%;">?</div>
-    <div class="tooltip" style="top: 30%; left: 38%;">
+    <div class="info-icon" style="top: 24%; left: 50%;">?</div>
+    <div class="tooltip" style="top: 28%; left: 50%;">
       <strong>Lounge:</strong><br>Här sitter du och tar det lugnt.
     </div>
 
-    <!-- Lugn avdelning -->
-    <div class="info-icon" style="top: 71%; left: 49%;">?</div>
-    <div class="tooltip" style="top: 75%; left: 49%;">
-      <strong>Lugn avdelning:</strong><br>Här kan du koppla av i tystnad.
+    <!-- Föreläsningssal -->
+    <div class="info-icon" style="top: 26%; left: 75%;">?</div>
+    <div class="tooltip" style="top: 30%; left: 75%;">
+      <strong>Föreläsningssal:</strong><br>Här hålls föreläsningarna.
     </div>
 
-    <!-- Kök (oförändrat) -->
-    <div class="info-icon" style="top: 50%; left: 63%;">?</div>
-    <div class="tooltip" style="top: 54%; left: 63%;">
+    <!-- Kök -->
+    <div class="info-icon" style="top: 50%; left: 58%;">?</div>
+    <div class="tooltip" style="top: 54%; left: 58%;">
       <strong>Kök:</strong><br>Här finns kaffe, vatten och någonting litet att äta.
     </div>
 
     <!-- Matbord -->
-    <div class="info-icon" style="top: 55%; left: 66%;">?</div>
-    <div class="tooltip" style="top: 59%; left: 66%;">
+    <div class="info-icon" style="top: 54%; left: 43%;">?</div>
+    <div class="tooltip" style="top: 58%; left: 43%;">
       <strong>Matbord:</strong><br>Här kan du sitta och äta.
     </div>
 
-    <!-- Föreläsningssal -->
-    <div class="info-icon" style="top: 64%; left: 30%;">?</div>
-    <div class="tooltip" style="top: 68%; left: 30%;">
-      <strong>Föreläsningssal:</strong><br>Här hålls föreläsningarna.
+    <!-- Lugn avdelning -->
+    <div class="info-icon" style="top: 70%; left: 72%;">?</div>
+    <div class="tooltip" style="top: 74%; left: 72%;">
+      <strong>Lugn avdelning:</strong><br>Här kan du koppla av i tystnad.
     </div>
   </div>
 
