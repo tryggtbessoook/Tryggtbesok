@@ -1,98 +1,24 @@
 <!DOCTYPE html>
-<html lang="sv">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Videoväljare</title>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "sd92zy1amr");
-</script>
-  <style>
-    body 
-    <body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Your App - Accessible Web Application</title>
+    <meta name="description" content="A modern, accessible web application built with React and designed to meet WCAG accessibility standards." />
+    <meta name="author" content="Lovable" />
 
-  <!-- Meny -->
-  <nav>
-    <a href="index.html">Hem</a>
-    <a href="sensorisk-guide.html">Sensorisk guide</a>
-    <a href="video.html">Videor</a>
-  </nav>
+    <meta property="og:title" content="Welcome to Your App - Accessible Web Application" />
+    <meta property="og:description" content="A modern, accessible web application built with React and designed to meet WCAG accessibility standards." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-  <!-- Resten av den befintliga koden... -->
-    {
-      font-family: sans-serif;
-      padding: 20px;
-    }
-    #videoPlayer {
-      display: block;
-      margin-bottom: 20px;
-      max-width: 100%;
-    }
-    .button-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
 
-  <video id="videoPlayer" width="640" controls>
-    <p>Din webbläsare stödjer inte HTML5-video.</p>
-  </video>
-
-  <div class="button-container">
-    <button onclick="playVideo(1)">Entré</button>
-    <button onclick="playVideo(2)">Lounge</button>
-    <button onclick="playVideo(3)">Klassrum</button>
-    <button onclick="playVideo(4)">Kök</button>
-    <button onclick="playVideo(5)">Kontor lugn avdelning</button>
-    <button onclick="playVideo(6)"></button>  <!-- Tom knapp för video 6 -->
-    <button onclick="playVideo(7)">Korridor</button>
-  </div>
-
-  <script>
-    function playVideo(id) {
-      const player = document.getElementById('videoPlayer');
-      const sources = {
-        1: 'video1.mp4',
-        2: 'video2.mp4',
-        3: 'video3.mp4',
-        4: 'video4.mp4',
-        5: 'video5.mp4',
-        6: 'video6.mp4',
-        7: 'video7.mp4'
-      };
-
-      const src = sources[id];
-      if (!src) {
-        console.error('Ingen källa för video ' + id);
-        return;
-      }
-
-      // Rensa eventuella tidigare <source>-element
-      player.innerHTML = '';
-      const sourceEl = document.createElement('source');
-      sourceEl.src = src;
-      sourceEl.type = 'video/mp4';
-      player.appendChild(sourceEl);
-
-      player.load();
-      player.play();
-    }
-
-    // Spela upp video 1 direkt vid sidladdning
-    playVideo(1);
-  </script>
-
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
