@@ -1,24 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Your App - Accessible Web Application</title>
-    <meta name="description" content="A modern, accessible web application built with React and designed to meet WCAG accessibility standards." />
-    <meta name="author" content="Lovable" />
+<html lang="sv">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TryggtBesök</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://tryggtbessoook.github.io/Tryggtbesok/Projekt-TryggtBesok/images/image1.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #111;
+    }
 
-    <meta property="og:title" content="Welcome to Your App - Accessible Web Application" />
-    <meta property="og:description" content="A modern, accessible web application built with React and designed to meet WCAG accessibility standards." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    header, footer {
+      text-align: center;
+      padding: 1em;
+      background-color: rgba(255, 255, 255, 0.85);
+    }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    main {
+      padding: 2em;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      max-width: 800px;
+      margin: 20px auto 40px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    #intro {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.5em;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999; /* lägre än menyn så menyn hamnar ovanpå */
+      font-size: 60px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+    }
+
+    #menu {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 260px;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      padding: 20px;
+      z-index: 1001; /* högre än hamburgermenyn */
+      
+      /* Starta gömd med opacity och scale för snygg animation */
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #menu.show {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    #menu a {
+      display: block;
+      margin: 16px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+    #menu a:hover {
+      background-color: #f0f0f0;    
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      margin-top: 60px;
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menyknapp -->
+  <button aria-label="Öppna/stäng meny" class="menu-button" id="menu-button">☰</button>
+
+  <!-- Meny -->
+  <nav id="menu" aria-hidden="true">
+    <a href="index.html">🏠 Hem</a>
+    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
+    <a href="vagen-hit.html">🗺️ Vägen hit</a>
+    <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
+    <a href="aktivitetsled.html">📝 Aktivitetsled</a>
+    <a href="bildstod.html">🧩 Bildstöd</a>
+    <a href="planritning.html">📐 Planritning</a>
+    <a href="om-oss.html">ℹ️ Om oss</a>
+  </nav>
+
+  <h1>Välkommen till TryggtBesök</h1>
+
+  <header>
+    <p>Vi hjälper dig förbereda och förstå din omgivning inför ditt besök.</p>
+  </header>
+
+  <main>
+    <section id="intro">
+      <p>Vi har tagit fram förberedande material för att underlätta ert besök hos Magelungens huvudkontor så pass mycket som möjligt. Vi förstår vikten av ett lugnt, förberett och förutsägbart besök. Vårt stöd kan brett användas av vem som helst, men vi riktar oss främst till personer med NPF-diagnoser och större behov. Vårt syfte är att göra alla besök tryggare för att främja mänsklig variation och inkludering i samhället. Alla har rätt till ett Tryggt besök.</p>
+      <p>Klicka på menyn uppe till höger för att navigera runt till olika flikar och ta del av materialet.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TryggtBesök</p>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
+    function toggleMenu() {
+      const isShown = menu.classList.contains('show');
+      if (isShown) {
+        menu.classList.remove('show');
+        menu.setAttribute('aria-hidden', 'true');
+      } else {
+        menu.classList.add('show');
+        menu.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    menuButton.addEventListener('click', (e) => {
+      e.stopPropagation(); // Förhindra att body-click fångas direkt
+      toggleMenu();
+    });
+
+    // Stäng menyn om man klickar utanför
+    document.body.addEventListener('click', (e) => {
+      if (menu.classList.contains('show')) {
+        // Om klicket är utanför menyn
+        if (!menu.contains(e.target) && e.target !== menuButton) {
+          menu.classList.remove('show');
+          menu.setAttribute('aria-hidden', 'true');
+        }
+      }
+    });
+
+    // Stäng menyn med Escape-tangenten
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        menu.setAttribute('aria-hidden', 'true');
+        menuButton.focus();
+      }
+    });
+  </script>
+
+</body>
 </html>
