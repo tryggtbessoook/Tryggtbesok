@@ -58,12 +58,13 @@
       background: none;
       border: none;
       cursor: pointer;
-      color: #333;
+      color: #000;
     }
 
     #menu {
+      display: none;
       position: fixed;
-      top: 90px; /* ÄNDRING: Placera menyn under hamburgarikonen */
+      top: 90px; /* Placering under hamburgarikonen */
       right: 20px;
       width: 260px;
       background: white;
@@ -72,16 +73,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       padding: 20px;
       z-index: 1001;
-      opacity: 0;
-      transform: scale(0.95);
-      pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    #menu.show {
-      opacity: 1;
-      transform: scale(1);
-      pointer-events: auto;
     }
 
     #menu a {
@@ -92,7 +83,6 @@
       font-size: 1.2rem;
       padding: 10px;
       border-radius: 6px;
-      transition: background-color 0.2s ease;
     }
 
     #menu a:hover {
@@ -116,7 +106,7 @@
 <body>
 
   <!-- Menyknapp -->
-  <button aria-label="Öppna/stäng meny" class="menu-button" id="menu-button">☰</button>
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Öppna meny">☰</button>
 
   <!-- Meny -->
   <nav id="menu" aria-hidden="true">
@@ -148,39 +138,19 @@
   </footer>
 
   <script>
-    const menuButton = document.getElementById('menu-button');
-    const menu = document.getElementById('menu');
-
     function toggleMenu() {
-      const isShown = menu.classList.contains('show');
-      if (isShown) {
-        menu.classList.remove('show');
-        menu.setAttribute('aria-hidden', 'true');
-      } else {
-        menu.classList.add('show');
-        menu.setAttribute('aria-hidden', 'false');
-      }
+      const menu = document.getElementById('menu');
+      const isOpen = menu.style.display === 'block';
+      menu.style.display = isOpen ? 'none' : 'block';
+      menu.setAttribute('aria-hidden', isOpen);
     }
 
-    menuButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleMenu();
-    });
-
-    document.body.addEventListener('click', (e) => {
-      if (menu.classList.contains('show')) {
-        if (!menu.contains(e.target) && e.target !== menuButton) {
-          menu.classList.remove('show');
-          menu.setAttribute('aria-hidden', 'true');
-        }
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menu.classList.contains('show')) {
-        menu.classList.remove('show');
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('menu');
+      const btn = document.querySelector('.menu-button');
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.style.display = 'none';
         menu.setAttribute('aria-hidden', 'true');
-        menuButton.focus();
       }
     });
   </script>
