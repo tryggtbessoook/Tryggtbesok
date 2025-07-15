@@ -131,6 +131,13 @@
       if (!icon.contains(e.target) && !menu.contains(e.target)) {
         menu.classList.remove('show');
       }
+        /* Gör så att aktiv länk blir gul med mörk bakgrund */
+.dropdown a.active {
+  color: #ff0;            /* Gul text */
+  background-color: #333; /* Mörk bakgrund */
+  border-radius: 4px;     /* Lite rundade hörn */
+}
+
     });
   </script>
 
