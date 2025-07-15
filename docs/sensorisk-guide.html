@@ -44,10 +44,27 @@
       top: 20px;
       right: 20px;
       z-index: 999;
-      font-size: 60px;
       background: none;
       border: none;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .menu-button .hamburger-icon {
+      font-size: 60px;
+      line-height: 1;
+    }
+
+    .menu-button .menu-text {
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: -8px;
     }
 
     .menu-button.hide {
@@ -111,9 +128,12 @@
       }
 
       .menu-button {
-        font-size: 50px;
         top: 16px;
         right: 16px;
+      }
+
+      .menu-button .hamburger-icon {
+        font-size: 50px;
       }
 
       #menu {
@@ -152,7 +172,10 @@
 <body>
 
   <!-- Menyknapp -->
-  <button class="menu-button" onclick="toggleMenu(event)">☰</button>
+  <button class="menu-button" onclick="toggleMenu(event)">
+    <span class="hamburger-icon">☰</span>
+    <span class="menu-text">meny</span>
+  </button>
 
   <!-- Meny -->
   <nav id="menu">
@@ -171,7 +194,7 @@
   <div class="accordion" onclick="toggleContent(this)">
     👃 Hur luktar det hos oss?
     <div class="content">
-      <p>I Magelungens lokaler finns inga doftsättningar. Doften ändras beroende på var du är. Ibland kan doften kännas stark eller störande. (Se fliken ”Hur det ser ut hos oss”, där starka sensoriska intryck är markerade.)</p>
+      <p>I Magelungens lokaler finns inga doftsättningar. Doften ändras beroende på var du är. Ibland kan doften kännas stark eller störande. (Se fliken "Hur det ser ut hos oss", där starka sensoriska intryck är markerade.)</p>
       <p>Du kan förvänta dig följande dofter hos oss:</p>
       <ul>
         <li>Nybryggt kaffe</li>
@@ -184,7 +207,7 @@
   <div class="accordion" onclick="toggleContent(this)">
     🔉 Hur låter det hos oss?
     <div class="content">
-      <p>Ljudnivån förändras beroende på tid och plats. Vid lunchtid är det mycket prat vid matbordet. Innan föreläsningar kan det vara många personer som pratar. Annars hörs mest småprat i lokalerna. Kaffemaskinen hörs i hela loungen. Andra ljud kan höras från köket. I föreläsningssalen kan projektorn låta. (Se fliken ”Hur det ser ut hos oss”, där starka sensoriska intryck är markerade.)</p>
+      <p>Ljudnivån förändras beroende på tid och plats. Vid lunchtid är det mycket prat vid matbordet. Innan föreläsningar kan det vara många personer som pratar. Annars hörs mest småprat i lokalerna. Kaffemaskinen hörs i hela loungen. Andra ljud kan höras från köket. I föreläsningssalen kan projektorn låta. (Se fliken "Hur det ser ut hos oss", där starka sensoriska intryck är markerade.)</p>
       <p>Du kan förvänta dig följande ljud hos oss:</p>
       <ul>
         <li>Kaffebryggare</li>
@@ -200,7 +223,7 @@
     💡 Hur upplevs ljuset hos oss?
     <div class="content">
       <p>I Magelungens lokaler används dimningsbara lampor som primär ljuskälla. Utöver dessa finns även starkare växtlampor i loungen samt på flera andra platser.</p>
-      <p>(Se fliken ”Hur det ser ut hos oss”, där starka sensoriska intryck är markerade.)</p>
+      <p>(Se fliken "Hur det ser ut hos oss", där starka sensoriska intryck är markerade.)</p>
     </div>
   </div>
 
@@ -209,7 +232,7 @@
     <div class="content">
       <p>Hos Magelungen stiftelse är temperaturen alltid behaglig på grund av att vi har en termostat och kan justera temperaturen efter behag.</p>
       <p>Du kan förvänta dig material såsom golvmattor, tygsoffor, träbord med mera.</p>
-      <p>Det finns en handikapptoalett vid entrén som är markerad på ritningen (se ”Hur ser det ut här”).</p>
+      <p>Det finns en handikapptoalett vid entrén som är markerad på ritningen (se "Hur ser det ut här").</p>
       <p><strong>OBS:</strong> Dörrarna vid ingången innan hissen är automatiska.</p>
     </div>
   </div>
