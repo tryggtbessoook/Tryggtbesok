@@ -21,15 +21,21 @@
       margin-top: 80px;
       font-size: 2.5em;
     }
-   .menu-button {
+    .menu-button {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 999; /* lägre än menyn så menyn hamnar ovanpå */
-      font-size: 60px;
+      z-index: 999;
       background: none;
       border: none;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .menu-button span {
+      display: block;
     }
     #menu {
       display: none;
@@ -42,7 +48,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       padding: 20px;
-      z-index: 1001; /* högre än hamburgermenyn */
+      z-index: 1001;
     }
     #menu a {
       display: block;
@@ -54,7 +60,8 @@
       border-radius: 6px;
     }
     #menu a:hover {
-      background-color: #f0f0f0;    }
+      background-color: #f0f0f0;
+    }
     .video-section {
       display: flex;
       flex-direction: column;
@@ -110,8 +117,11 @@
 </head>
 <body>
 
-  <!-- Menyknapp -->
-  <button class="menu-button" onclick="toggleMenu()" aria-label="Öppna meny">☰</button>
+  <!-- Menyknapp med text -->
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Öppna meny">
+    <span style="font-size: 60px; line-height: 1;">☰</span>
+    <span style="font-size: 14px; font-weight: bold; color: #333; text-transform: uppercase; letter-spacing: 1px; display: block; margin-top: -8px;">meny</span>
+  </button>
 
   <!-- Meny -->
   <nav id="menu" aria-hidden="true">
@@ -128,7 +138,6 @@
   <!-- Rubrik -->
   <header>
     <h1>Hur det ser ut</h1>
-
   </header>
 
   <!-- Videosektion -->
@@ -167,7 +176,6 @@
       allowfullscreen>
     </iframe>
 
- 
   </main>
 
   <script>
