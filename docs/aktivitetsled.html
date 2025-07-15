@@ -12,22 +12,26 @@
       padding: 0;
       background: #f9f9f9;
     }
+
     main {
       padding: 2em;
       max-width: 700px;
       margin: auto;
       text-align: center;
     }
+
     h1 {
       font-size: 2em;
       margin-bottom: 0.5em;
     }
+
     .intro-text {
       font-size: 1.1em;
       color: #333;
       margin-bottom: 1.5em;
       line-height: 1.6;
     }
+
     .download-link {
       font-size: 1.1em;
       color: #007acc;
@@ -35,6 +39,7 @@
       display: inline-block;
       margin: 0.5em 0;
     }
+
     .download-link:hover {
       text-decoration: underline;
     }
@@ -49,10 +54,10 @@
       border: none;
       cursor: pointer;
     }
+
     #menu {
-      display: none;
       position: fixed;
-      top: 20px;
+      top: 90px; /* Ändrat från 20px till 90px */
       right: 20px;
       width: 260px;
       background: white;
@@ -61,7 +66,18 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       padding: 20px;
       z-index: 1001;
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
+
+    #menu.show {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
     #menu a {
       display: block;
       margin: 16px 0;
@@ -70,7 +86,9 @@
       font-size: 1.2rem;
       padding: 10px;
       border-radius: 6px;
+      transition: background-color 0.2s ease;
     }
+
     #menu a:hover {
       background-color: #f0f0f0;
     }
@@ -79,7 +97,7 @@
 <body>
 
   <!-- Menyknapp -->
-  <button class="menu-button" onclick="toggleMenu()" aria-label="Öppna meny">☰</button>
+  <button class="menu-button" id="menu-button" aria-label="Öppna meny">☰</button>
 
   <!-- Meny -->
   <nav id="menu" aria-hidden="true">
@@ -100,35 +118,54 @@
     </p>
 
     <h1>📝 Aktivitetsled</h1>
-    
-<a class="download-link" href="https://github.com/tryggtbessoook/Tryggtbesok/raw/main/docs/aktivitetsled1.pdf" target="_blank">
-  📄 Ladda ner Aktivitetsled 1 (PDF)
-</a>
 
-<a class="download-link" href="https://github.com/tryggtbessoook/Tryggtbesok/raw/main/docs/aktivitetsled2.pdf" target="_blank">
-  📄 Ladda ner Aktivitetsled 2 (PDF)
-</a>
+    <a class="download-link" href="https://github.com/tryggtbessoook/Tryggtbesok/raw/main/docs/aktivitetsled1.pdf" target="_blank">
+      📄 Ladda ner Aktivitetsled 1 (PDF)
+    </a>
 
-<a class="download-link" href="https://github.com/tryggtbessoook/Tryggtbesok/raw/main/docs/aktivitetsled3.pdf" target="_blank">
-  📄 Ladda ner Aktivitetsled 3 (PDF)
-</a>
-  
+    <a class="download-link" href="https://github.com/tryggtbessoook/Tryggtbesok/raw/main/docs/aktivitetsled2.pdf" target="_blank">
+      📄 Ladda ner Aktivitetsled 2 (PDF)
+    </a>
+
+    <a class="download-link" href="https://github.com/tryggtbessoook/Tryggtbesok/raw/main/docs/aktivitetsled3.pdf" target="_blank">
+      📄 Ladda ner Aktivitetsled 3 (PDF)
+    </a>
   </main>
 
   <script>
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
     function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const isOpen = menu.style.display === 'block';
-      menu.style.display = isOpen ? 'none' : 'block';
-      menu.setAttribute('aria-hidden', isOpen);
+      const isShown = menu.classList.contains('show');
+      if (isShown) {
+        menu.classList.remove('show');
+        menu.setAttribute('aria-hidden', 'true');
+      } else {
+        menu.classList.add('show');
+        menu.setAttribute('aria-hidden', 'false');
+      }
     }
 
-    document.addEventListener('click', function(e) {
-      const menu = document.getElementById('menu');
-      const btn = document.querySelector('.menu-button');
-      if (!menu.contains(e.target) && !btn.contains(e.target)) {
-        menu.style.display = 'none';
+    menuButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (menu.classList.contains('show')) {
+        if (!menu.contains(e.target) && e.target !== menuButton) {
+          menu.classList.remove('show');
+          menu.setAttribute('aria-hidden', 'true');
+        }
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('show')) {
+        menu.classList.remove('show');
         menu.setAttribute('aria-hidden', 'true');
+        menuButton.focus();
       }
     });
   </script>
