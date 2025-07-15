@@ -43,7 +43,7 @@
 
     main {
       padding: 2em;
-      background-color: rgba(255, 255, 255, 0.8); /* Ökad opacitet för bättre kontrast */
+      background-color: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       max-width: 800px;
@@ -111,7 +111,7 @@
       margin-top: 2em;
       text-align: center;
     }
-    .nav-buttons a {
+    .nav-buttons button {
       display: inline-block;
       margin: 0.5em;
       padding: 0.75em 1.5em;
@@ -120,9 +120,9 @@
       background-color: #005a9c;
       border: none;
       border-radius: 6px;
-      text-decoration: none;
+      cursor: pointer;
     }
-    .nav-buttons a:focus, .nav-buttons a:hover {
+    .nav-buttons button:focus, .nav-buttons button:hover {
       background-color: #003f6b;
       outline: 3px solid #ffbf47;
       outline-offset: 2px;
@@ -168,13 +168,13 @@
     <section aria-labelledby="intro">
       <h2 id="intro">Om TryggtBesök</h2>
       <p>Vi har tagit fram förberedande material för att underlätta ert besök hos Magelungens huvudkontor så pass mycket som möjligt. Vi förstår vikten av ett lugnt, förberett och förutsägbart besök. Vårt stöd kan brett användas av vem som helst, men vi riktar oss främst till personer med NPF-diagnoser och större behov. Vårt syfte är att göra alla besök tryggare för att främja mänsklig variation och inkludering i samhället. Alla har rätt till ett Tryggt besök.</p>
-      <p>Klicka på menyn uppe till höger för att navigera runt till olika flikar och ta del av materialet.</p>
+      <p>Klicka på menyn uppe till höger för att navigera till olika flikar och ta del av materialet.</p>
     </section>
 
     <section class="nav-buttons" aria-labelledby="navigate">
       <h2 id="navigate" class="visually-hidden">Navigera till flikar i app.tryggtbesok.se</h2>
-      <a href="https://app.tryggtbesok.se/?tab=2">Gå till flik 2</a>
-      <a href="https://app.tryggtbesok.se/?tab=3">Gå till flik 3</a>
+      <button id="btn-feature" type="button">Hur det ser ut</button>
+      <button id="btn-map" type="button">Vägen hit</button>
     </section>
   </main>
 
@@ -208,6 +208,14 @@
         menuButton.setAttribute('aria-expanded', 'false');
         menu.setAttribute('aria-hidden', 'true');
       }
+    });
+
+    // Navigationsknappar
+    document.getElementById('btn-feature').addEventListener('click', () => {
+      window.location.href = 'https://app.tryggtbesok.se/?tab=2';
+    });
+    document.getElementById('btn-map').addEventListener('click', () => {
+      window.location.href = 'https://app.tryggtbesok.se/?tab=3';
     });
   </script>
 </body>
