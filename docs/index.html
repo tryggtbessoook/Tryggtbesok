@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TryggtBesök</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
   <style>
+    /* Grundläggande stilar med tillräcklig kontrast och fokusindikering */
     body {
       font-family: sans-serif;
       margin: 0;
@@ -18,6 +19,22 @@
       color: #111;
     }
 
+    a.skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      z-index: 100;
+      text-decoration: none;
+    }
+    a.skip-link:focus {
+      top: 0;
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
+
     header, footer {
       text-align: center;
       padding: 1em;
@@ -26,125 +43,142 @@
 
     main {
       padding: 2em;
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.8); /* Ökad opacitet för bättre kontrast */
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       max-width: 800px;
-      margin: 20px auto 40px auto;
+      margin: 20px auto 40px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
 
-    #intro {
-      max-width: 600px;
-      margin: auto;
-      text-align: center;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 2.5em;
-      color: #fff;
-      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    h1, h2 {
+      margin-top: 0;
     }
 
     .menu-button {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 999; /* lägre än menyn så menyn hamnar ovanpå */
-      font-size: 60px;
+      z-index: 999;
+      font-size: 2rem;
       background: none;
       border: none;
       cursor: pointer;
       color: #333;
     }
+    .menu-button:focus {
+      outline: 3px solid #005a9c;
+      outline-offset: 2px;
+    }
 
-    #menu {
+    nav#menu {
       position: fixed;
-      top: 20px;
+      top: 60px;
       right: 20px;
       width: 260px;
-      background: white;
+      background: #fff;
       border: 2px solid #ccc;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       padding: 20px;
-      z-index: 1001; /* högre än hamburgermenyn */
-      
-      /* Starta gömd med opacity och scale för snygg animation */
+      z-index: 1001;
       opacity: 0;
       transform: scale(0.95);
       pointer-events: none;
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
-
-    #menu.show {
+    nav#menu.show {
       opacity: 1;
       transform: scale(1);
       pointer-events: auto;
     }
-
-    #menu a {
+    nav#menu a {
       display: block;
-      margin: 16px 0;
+      margin: 0.5em 0;
       text-decoration: none;
       color: #333;
-      font-size: 1.2rem;
-      padding: 10px;
+      font-size: 1rem;
+      padding: 0.5em;
       border-radius: 6px;
-      transition: background-color 0.2s ease;
     }
-    #menu a:hover {
-      background-color: #f0f0f0;    
+    nav#menu a:focus, nav#menu a:hover {
+      background-color: #f0f0f0;
+      outline: none;
     }
 
-    footer {
+    .nav-buttons {
+      margin-top: 2em;
       text-align: center;
-      padding: 2em;
-      margin-top: 60px;
-      background-color: rgba(255, 255, 255, 0.85);
+    }
+    .nav-buttons a {
+      display: inline-block;
+      margin: 0.5em;
+      padding: 0.75em 1.5em;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #005a9c;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .nav-buttons a:focus, .nav-buttons a:hover {
+      background-color: #003f6b;
+      outline: 3px solid #ffbf47;
+      outline-offset: 2px;
     }
 
-    footer a {
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
+    /* Skärmläsardold klass */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      border: 0;
     }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
 
-  <!-- Menyknapp -->
-  <button aria-label="Öppna/stäng meny" class="menu-button" id="menu-button">☰</button>
+  <button aria-controls="menu" aria-expanded="false" aria-label="Öppna/stäng meny" class="menu-button" id="menu-button">☰</button>
 
-  <!-- Meny -->
-  <nav id="menu" aria-hidden="true">
-    <a href="index.html">🏠 Hem</a>
-    <a href="hur-det-ser-ut.html">📷 Hur det ser ut</a>
-    <a href="vagen-hit.html">🗺️ Vägen hit</a>
-    <a href="sensorisk-guide.html">👃 Sensorisk guide</a>
-    <a href="aktivitetsled.html">📝 Aktivitetsled</a>
-    <a href="bildstod.html">🧩 Bildstöd</a>
-    <a href="planritning.html">📐 Planritning</a>
-    <a href="om-oss.html">ℹ️ Om oss</a>
+  <nav id="menu" aria-label="Huvudnavigering" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">🏠 Hem</a></li>
+      <li><a href="hur-det-ser-ut.html">📷 Hur det ser ut</a></li>
+      <li><a href="vagen-hit.html">🗺️ Vägen hit</a></li>
+      <li><a href="sensorisk-guide.html">👃 Sensorisk guide</a></li>
+      <li><a href="aktivitetsled.html">📝 Aktivitetsled</a></li>
+      <li><a href="bildstod.html">🧩 Bildstöd</a></li>
+      <li><a href="planritning.html">📐 Planritning</a></li>
+      <li><a href="om-oss.html">ℹ️ Om oss</a></li>
+    </ul>
   </nav>
 
-  <h1>Välkommen till TryggtBesök</h1>
-
-  <header>
+  <header role="banner">
+    <h1>Välkommen till TryggtBesök</h1>
     <p>Vi hjälper dig förbereda och förstå din omgivning inför ditt besök.</p>
   </header>
 
-  <main>
-    <section id="intro">
+  <main id="main-content" role="main">
+    <section aria-labelledby="intro">
+      <h2 id="intro">Om TryggtBesök</h2>
       <p>Vi har tagit fram förberedande material för att underlätta ert besök hos Magelungens huvudkontor så pass mycket som möjligt. Vi förstår vikten av ett lugnt, förberett och förutsägbart besök. Vårt stöd kan brett användas av vem som helst, men vi riktar oss främst till personer med NPF-diagnoser och större behov. Vårt syfte är att göra alla besök tryggare för att främja mänsklig variation och inkludering i samhället. Alla har rätt till ett Tryggt besök.</p>
       <p>Klicka på menyn uppe till höger för att navigera runt till olika flikar och ta del av materialet.</p>
     </section>
+
+    <section class="nav-buttons" aria-labelledby="navigate">
+      <h2 id="navigate" class="visually-hidden">Navigera till flikar i app.tryggtbesok.se</h2>
+      <a href="https://app.tryggtbesok.se/?tab=2">Gå till flik 2</a>
+      <a href="https://app.tryggtbesok.se/?tab=3">Gå till flik 3</a>
+    </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 TryggtBesök</p>
   </footer>
 
@@ -152,42 +186,29 @@
     const menuButton = document.getElementById('menu-button');
     const menu = document.getElementById('menu');
 
-    function toggleMenu() {
-      const isShown = menu.classList.contains('show');
-      if (isShown) {
-        menu.classList.remove('show');
-        menu.setAttribute('aria-hidden', 'true');
-      } else {
-        menu.classList.add('show');
-        menu.setAttribute('aria-hidden', 'false');
-      }
-    }
-
-    menuButton.addEventListener('click', (e) => {
-      e.stopPropagation(); // Förhindra att body-click fångas direkt
-      toggleMenu();
+    menuButton.addEventListener('click', () => {
+      const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('show');
+      menu.setAttribute('aria-hidden', String(expanded));
     });
 
-    // Stäng menyn om man klickar utanför
-    document.body.addEventListener('click', (e) => {
-      if (menu.classList.contains('show')) {
-        // Om klicket är utanför menyn
-        if (!menu.contains(e.target) && e.target !== menuButton) {
-          menu.classList.remove('show');
-          menu.setAttribute('aria-hidden', 'true');
-        }
-      }
-    });
-
-    // Stäng menyn med Escape-tangenten
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.classList.contains('show')) {
         menu.classList.remove('show');
+        menuButton.setAttribute('aria-expanded', 'false');
         menu.setAttribute('aria-hidden', 'true');
         menuButton.focus();
       }
     });
-  </script>
 
+    document.addEventListener('click', (e) => {
+      if (menu.classList.contains('show') && !menu.contains(e.target) && e.target !== menuButton) {
+        menu.classList.remove('show');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
 </body>
 </html>
