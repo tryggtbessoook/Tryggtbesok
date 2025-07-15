@@ -209,14 +209,16 @@
         menu.setAttribute('aria-hidden', 'true');
       }
     });
-
-    // Navigationsknappar
-    document.getElementById('btn-feature').addEventListener('click', () => {
-      window.location.href = 'https://app.tryggtbesok.se/?tab=2';
-    });
-    document.getElementById('btn-map').addEventListener('click', () => {
-      window.location.href = 'https://app.tryggtbesok.se/?tab=3';
-    });
+    // Navigationsknappar går till lokala sidor
+document.getElementById('btn-feature').addEventListener('click', () => {
+  window.location.href = 'hur-det-ser-ut.html';
+});
+document.getElementById('btn-map').addEventListener('click', () => {
+  window.location.href = 'vagen-hit.html';
+});
+ </script>
+  
+   
   </script>
 </body>
 </html>
