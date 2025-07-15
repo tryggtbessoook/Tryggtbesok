@@ -56,14 +56,17 @@
       margin-top: 0;
     }
 
+    /* Förbättrad menyknapp med större klickyta och tydligare ikon */
     .menu-button {
       position: fixed;
       top: 20px;
       right: 20px;
       z-index: 999;
-      font-size: 2rem;
-      background: none;
+      font-size: 2.5rem;        /* Ökad från 2rem */
+      padding: 0.5em;           /* Lagt till extra padding */
+      background-color: rgba(255, 255, 255, 0.8); /* Lätt bakgrund för kontrast */
       border: none;
+      border-radius: 8px;
       cursor: pointer;
       color: #333;
     }
@@ -210,12 +213,12 @@
       }
     });
     // Navigationsknappar går till lokala sidor
-document.getElementById('btn-feature').addEventListener('click', () => {
-  window.location.href = 'hur-det-ser-ut.html';
-});
-document.getElementById('btn-map').addEventListener('click', () => {
-  window.location.href = 'vagen-hit.html';
-});
- </script>
+  document.getElementById('btn-feature').addEventListener('click', () => {
+    window.location.href = 'hur-det-ser-ut.html';
+  });
+  document.getElementById('btn-map').addEventListener('click', () => {
+    window.location.href = 'vagen-hit.html';
+  });
+   </script>
 </body>
 </html>
